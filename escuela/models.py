@@ -53,6 +53,7 @@ class Plan(models.Model):
 
 class Curso(models.Model):
     anio_lectivo = models.IntegerField(null=True, blank=True)
+    nombre = models.CharField(max_length=40)
     plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name="cursos")
 
     def __str__(self):

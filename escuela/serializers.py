@@ -15,6 +15,8 @@ class PlanSerializer(serializers.ModelSerializer):
 
 
 class CursoSerializer(serializers.ModelSerializer):
+    plan = PlanSerializer(read_only=True, many=False)
+
     class Meta:
         model = Curso
         fields = '__all__'
