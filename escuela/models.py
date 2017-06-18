@@ -55,6 +55,7 @@ class Curso(models.Model):
     anio_lectivo = models.IntegerField(null=True, blank=True)
     nombre = models.CharField(max_length=40)
     plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name="cursos")
+    activo = models.BooleanField(default=True)
 
     def __str__(self):
         return self.anio_lectivo.__str__()

@@ -2,14 +2,29 @@ from rest_framework.viewsets import ModelViewSet
 from .models import *
 from .serializers import *
 
+class MultiSerializerViewSet(ModelViewSet):
+    serializers = {
+        'default': None,
+    }
+
+    def get_serializer_class(self):
+            return self.serializers.get(self.action,
+                        self.serializers['default'])
+
 class AlumnoViewSet(ModelViewSet):
     queryset = Alumno.objects.all()
     serializer_class = AlumnoSerializer
 
 
-class CursoViewSet(ModelViewSet):
+class CursoViewSet(MultiSerializerViewSet):
     queryset = Curso.objects.all()
-    serializer_class = CursoSerializer
+    serializers = {
+        'default':    CursoSerializer,
+        'create':  CursoPostSerializer,
+        'retrieve': CursoPostSerializer,
+        'update': CursoPostSerializer
+    }
+
 
     def get_queryset(self):
         queryset = Curso.objects.all()

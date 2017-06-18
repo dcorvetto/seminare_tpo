@@ -22,6 +22,14 @@ class CursoSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class CursoPostSerializer(serializers.ModelSerializer):
+    plan = serializers.PrimaryKeyRelatedField(queryset=Plan.objects.all())
+
+    class Meta:
+        model = Curso
+        fields = '__all__'
+
+
 class InscripcionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Inscripcion

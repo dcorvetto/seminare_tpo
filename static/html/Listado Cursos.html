@@ -1,59 +1,59 @@
-        <div class="row">
+<div class="row">
 
-            <div class="page-header">
-                <h2>Listado Cursos</h2>
+    <div class="page-header">
+        <h2>Listado Cursos</h2>
+    </div>
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Búsqueda</h3>
             </div>
-            <div class="panel-group">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                    <h3 class="panel-title">Búsqueda</h3>
-                    </div>  
-                       <div class="panel-body">
-                             <form class="form-inline">
-                                                  
-                                 <div class="form-group">
-                                    <label>Plan</label>
-                                    <select class="form-control" ng-model="planId">
+            <div class="panel-body">
+                <form class="form-inline">
+
+                    <div class="form-group">
+                        <label>Plan</label>
+                        <select class="form-control" ng-model="planId">
                                     <option value="">Seleccione un plan</option>
                                     <option ng-repeat="p in planes" value="{{ p.id }}">{{ p.nombre }}</option>
                                     </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Nombre:</label>
-                                    <input type="text" name="" ng-model="cursoNombre" id="input" class="form-control" value="" />
-                                </div>
-                                <button ng-click="buscar()" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
-                            </form>
                     </div>
-               </div>
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        <input type="text" name="" ng-model="cursoNombre" id="input" class="form-control" value="" />
+                    </div>
+                    <button ng-click="buscar()" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
+                </form>
             </div>
-            
-
-
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Alumnos</h3>
-                </div>
-                <div class="panel-body">
-
-                    <table data-toggle="table" data-url="listaMaterias" data-sort-name="stargazers_count" data-sort-order="desc">
-                        <thead>
-                            <tr>
-                                <th data-field="name" data-sortable="true">Curso</th>
-                                <th data-field="plan" data-sortable="true">Plan</th>
-                                <th>Accion</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                             <tr ng-repeat="curso in cursos">
-                                <td>{{ curso.nombre }}</td>
-                                <td>{{ curso.plan.nombre }}</td>
-                                <td><a href="#/cursos/modificar/{{ curso.id }}" target="_self">Editar</a> | <a href="escuela/cursos/delete/{{ curso.id }}" target="_blank">Eliminar</a></td>
-                            
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
         </div>
+    </div>
+
+
+
+    <div class="panel panel-primary" ng-show="cursos">
+        <div class="panel-heading">
+            <h3 class="panel-title">Cursos</h3>
+        </div>
+        <div class="panel-body">
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th data-field="name" data-sortable="true">Curso</th>
+                        <th data-field="plan" data-sortable="true">Plan</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="curso in cursos">
+                        <td>{{ curso.nombre }}</td>
+                        <td>{{ curso.plan.nombre }}</td>
+                        <td><a href="#/curso/modificar/{{ curso.id }}" target="_self">Editar</a> | <a ng-click="eliminar(curso.id)">Eliminar</a></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
