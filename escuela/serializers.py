@@ -43,10 +43,18 @@ class DocenteSerializer(serializers.ModelSerializer):
 
 
 class MateriaSerializer(serializers.ModelSerializer):
+    plan = PlanSerializer(read_only=True, many=False)
+    
     class Meta:
         model = Materia
         fields = '__all__'
 
+class MateriaPostSerializer(serializers.ModelSerializer):
+    plan = serializers.PrimaryKeyRelatedField(queryset=Plan.objects.all())
+    
+    class Meta:
+        model = Materia
+        fields = '__all__'
 
 class CalificacionSerializer(serializers.ModelSerializer):
     class Meta:

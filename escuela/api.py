@@ -43,9 +43,26 @@ class PlanViewSet(ModelViewSet):
     serializer_class = PlanSerializer
 
 
-class MateriaViewSet(ModelViewSet):
+class MateriaViewSet(MultiSerializerViewSet):
     queryset = Materia.objects.all()
-    serializer_class = MateriaSerializer
+    serializers = {
+        'default':    MateriaSerializer,
+        'create':  MateriaPostSerializer,
+        'retrieve': MateriaPostSerializer,
+        'update': MateriaPostSerializer
+    }
+
+
+    def get_queryset(self):
+        queryset = Materia.objects.all()
+        plan_id = self.request.query_params.get('planId', None)
+        curso_nombre = self.request.query_params.get('cursoNombre', None)
+
+        if curso_nombre is not None:
+            queryset = queryset.filter(nombre__contains=curso_nombre)
+        if plan_id is not None:
+            queryset = queryset.filter(plan_id=plan_id)
+        return queryset
 
 
 class InscripcionViewSet(ModelViewSet):

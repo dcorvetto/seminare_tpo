@@ -21,11 +21,74 @@
             .when('/curso/alta', {
                 templateUrl: '/static/html/Alta Curso.html',
                 controller: CursosAlta
-            }).when('/curso/modificar/:id', {
+            })
+            .when('/curso/modificar/:id', {
                 templateUrl: '/static/html/Alta Curso.html',
                 controller: CursosModificar
             })
+            .when('/materia/listar', {
+                templateUrl: '/static/html/Listado Materias.html',
+                controller: ListadoMateriasController
+            })
+            .when('/materia/alta', {
+                templateUrl: '/static/html/Alta Materia.html',
+                controller: MateriaAlta
+            })
             .otherwise('/');
+    }
+
+    var MateriaAlta = function($scope, $http) {
+        cargarPlanes($scope, $http);
+        // $scope.anio = 2017;
+        // $scope.curso = { plan: "", nombre: "", activo: true, anio_lectivo: 2017 };
+        $scope.guardar = function() {
+            $http.post('/escuela/materias/?format=json', $scope.materia)
+                .then(function(response) {
+                        alert('Materia cargado con éxito.');
+                        window.location = "#/materia/listar"
+                    },
+                    function(response) {
+                        alert(response.status);
+                    }
+                );
+        }
+    };
+    var ListadoMateriasController = function($scope, $http) {
+        cargarPlanes($scope, $http);
+        $scope.buscar = function() {
+            $http({
+                    method: 'GET',
+                    url: '/escuela/materias/',
+                    params: {
+                        planId: $scope.planId,
+                        cursoNombre: $scope.cursoNombre
+                    }
+                })
+                .then(function(response) {
+                        $scope.materias = (response.data);
+                        if (response.data.length == 0) {
+                            alert('No se encontró ninguna materia.')
+                        }
+                    },
+                    function() {
+                        alert('Error buscando materias.');
+                    }
+                );
+        };
+        $scope.eliminar = function(id) {
+            $http({
+                    method: 'DELETE',
+                    url: '/escuela/materias/' + id + '/'
+                })
+                .then(function(response) {
+                        alert("Materia eliminado exitosamente.")
+                        $scope.buscar()
+                    },
+                    function() {
+                        alert('Error eliminando materia.');
+                    }
+                );
+        };
     }
 
     function cargarPlanes($scope, $http) {
@@ -50,8 +113,8 @@
                     window.location = "#/"
                 }
             );
-        $scope.guardar = function(){
-            $http.put('/escuela/cursos/'+ $routeParams.id + '/', $scope.curso)
+        $scope.guardar = function() {
+            $http.put('/escuela/cursos/' + $routeParams.id + '/', $scope.curso)
                 .then(function(response) {
                         alert('Curso modificado con éxito.');
                         window.location = "#/curso/listar"
@@ -66,8 +129,8 @@
     var CursosAlta = function($scope, $http) {
         cargarPlanes($scope, $http);
         $scope.anio = 2017;
-        $scope.curso = {plan: "", nombre: "", activo: true, anio_lectivo: 2017};
-        $scope.guardar = function(){
+        $scope.curso = { plan: "", nombre: "", activo: true, anio_lectivo: 2017 };
+        $scope.guardar = function() {
             $http.post('/escuela/cursos/?format=json', $scope.curso)
                 .then(function(response) {
                         alert('Curso cargado con éxito.');
