@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'escuela',
+    'auth_api'
 ]
 
 MIDDLEWARE = [
@@ -125,8 +126,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny',
-    )
-}
+AUTHENTICATION_BACKENDS = ['auth_api.auth_backend.EmailBackend']
+

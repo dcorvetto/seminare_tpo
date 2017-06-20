@@ -9,100 +9,118 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
     <script src="{% static 'lib/ui-bootstrap-tpls-2.5.0.min.js' %}"></script>
     <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/login.controller.js' %}"></script>
+    <script src="{% static 'js/login.service.js' %}"></script>
+    <script src="{% static 'js/cursos.js' %}"></script>
+    <script src="{% static 'js/materias.js' %}"></script>
+    <script src="{% static 'js/run.js' %}"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
 
 <body ng-app="app">
 
-    <div class="row">
-        <nav class="navbar navbar-inverse " role="navigation">
-            <div class="navbar-header">
+    <div class=" row ">
+        <nav class="navbar navbar-inverse " role="navigation ">
+            <div class="navbar-header ">
 
-                <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+                <button type="button " class="navbar-toggle " ng-init="navCollapsed=true" ng-click="navCollapsed=!navCollapsed">
+            <span class="sr-only ">Toggle navigation</span>
+            <span class="icon-bar "></span>
+            <span class="icon-bar "></span>
+            <span class="icon-bar "></span>
           </button>
-                <a class="navbar-brand" href="#">Escuela</a>
+                <a class="navbar-brand " href="# ">Escuela</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+            <div class="collapse navbar-collapse " ng-class="!navCollapsed && 'in' ">
 
-                <ul class="nav navbar-nav">
-                    <li><a href="#/" ng-click='navCollapsed = true'>Home</a></li>
-                    <li class="dropdown" uib-dropdown>
-                        <a class="dropdown-toggle" uib-dropdown-toggle>
-                            <i class="fa fa-cogs"></i> Curso
-                            <span class="caret"></span>
+                <ul class="nav navbar-nav ">
+                    <li><a href="#/ " ng-click='navCollapsed = true'>Home</a></li>
+                    <li class="dropdown " uib-dropdown>
+                        <a class="dropdown-toggle " uib-dropdown-toggle>
+                            <i class="fa fa-cogs "></i> Curso
+                            <span class="caret "></span>
                         </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#/curso/alta" ng-click='navCollapsed = true'>Alta</a></li>
-                            <li><a href="#/curso/listar" ng-click='navCollapsed = true'>Listar</a></li>
+                        <ul class="dropdown-menu " role="menu ">
+                            <li><a href="#/curso/alta " ng-click='navCollapsed = true'>Alta</a></li>
+                            <li><a href="#/curso/listar " ng-click='navCollapsed = true'>Listar</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown" uib-dropdown>
-                        <a class="dropdown-toggle" uib-dropdown-toggle>
-                            <i class="fa fa-cogs"></i> Materia
-                            <span class="caret"></span>
+                    <li class="dropdown " uib-dropdown>
+                        <a class="dropdown-toggle " uib-dropdown-toggle>
+                            <i class="fa fa-cogs "></i> Materia
+                            <span class="caret "></span>
                         </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#/materia/alta" ng-click='navCollapsed = true'>Alta</a></li>
-                            <li><a href="#/materia/listar" ng-click='navCollapsed = true'>Listar</a></li>
+                        <ul class="dropdown-menu " role="menu ">
+                            <li><a href="#/materia/alta " ng-click='navCollapsed = true'>Alta</a></li>
+                            <li><a href="#/materia/listar " ng-click='navCollapsed = true'>Listar</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown" uib-dropdown>
-                        <a class="dropdown-toggle" uib-dropdown-toggle>
-                            <i class="fa fa-cogs"></i> Plan
-                            <span class="caret"></span>
+                    <li class="dropdown " uib-dropdown>
+                        <a class="dropdown-toggle " uib-dropdown-toggle>
+                            <i class="fa fa-cogs "></i> Plan
+                            <span class="caret "></span>
                         </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#/plan/alta" ng-click='navCollapsed = true'>Alta</a></li>
-                            <li><a href="#/plan/listar" ng-click='navCollapsed = true'>Listar</a></li>
+                        <ul class="dropdown-menu " role="menu ">
+                            <li><a href="#/plan/alta " ng-click='navCollapsed = true'>Alta</a></li>
+                            <li><a href="#/plan/listar " ng-click='navCollapsed = true'>Listar</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown" uib-dropdown>
-                        <a class="dropdown-toggle" uib-dropdown-toggle>
-                            <i class="fa fa-cogs"></i> Alumno
-                            <span class="caret"></span>
+                    <li class="dropdown " uib-dropdown>
+                        <a class="dropdown-toggle " uib-dropdown-toggle>
+                            <i class="fa fa-cogs "></i> Alumno
+                            <span class="caret "></span>
                         </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#/alumno/alta" ng-click='navCollapsed = true'>Alta</a></li>
-                            <li><a href="#/alumno/listar" ng-click='navCollapsed = true'>Listar</a></li>
+                        <ul class="dropdown-menu " role="menu ">
+                            <li><a href="#/alumno/alta " ng-click='navCollapsed = true'>Alta</a></li>
+                            <li><a href="#/alumno/listar " ng-click='navCollapsed = true'>Listar</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown" uib-dropdown>
-                        <a class="dropdown-toggle" uib-dropdown-toggle>
-                            <i class="fa fa-cogs"></i> Docente
-                            <span class="caret"></span>
+                    <li class="dropdown " uib-dropdown>
+                        <a class="dropdown-toggle " uib-dropdown-toggle>
+                            <i class="fa fa-cogs "></i> Docente
+                            <span class="caret "></span>
                         </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#/docente/alta" ng-click='navCollapsed = true'>Alta</a></li>
-                            <li><a href="#/docente/listar" ng-click='navCollapsed = true'>Listar</a></li>
+                        <ul class="dropdown-menu " role="menu ">
+                            <li><a href="#/docente/alta " ng-click='navCollapsed = true'>Alta</a></li>
+                            <li><a href="#/docente/listar " ng-click='navCollapsed = true'>Listar</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown" uib-dropdown>
-                        <a class="dropdown-toggle" uib-dropdown-toggle>
-                            <i class="fa fa-cogs"></i> Calificación
-                            <span class="caret"></span>
+                    <li class="dropdown " uib-dropdown>
+                        <a class="dropdown-toggle " uib-dropdown-toggle>
+                            <i class="fa fa-cogs "></i> Calificación
+                            <span class="caret "></span>
                         </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#/calificacion/alta" ng-click='navCollapsed = true'>Alta</a></li>
-                            <li><a href="#/calificacion/listar" ng-click='navCollapsed = true'>Listar</a></li>
+                        <ul class="dropdown-menu " role="menu ">
+                            <li><a href="#/calificacion/alta " ng-click='navCollapsed = true'>Alta</a></li>
+                            <li><a href="#/calificacion/listar " ng-click='navCollapsed = true'>Listar</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown" uib-dropdown>
-                        <a class="dropdown-toggle" uib-dropdown-toggle>
-                            <i class="fa fa-cogs"></i> Inscripciones
-                            <span class="caret"></span>
+                    <li class="dropdown " uib-dropdown>
+                        <a class="dropdown-toggle " uib-dropdown-toggle>
+                            <i class="fa fa-cogs "></i> Inscripciones
+                            <span class="caret "></span>
                         </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#/inscripcion/alta" ng-click='navCollapsed = true'>Alta</a></li>
-                            <li><a href="#/inscripcion/listar" ng-click='navCollapsed = true'>Listar</a></li>
+                        <ul class="dropdown-menu " role="menu ">
+                            <li><a href="#/inscripcion/alta " ng-click='navCollapsed = true'>Alta</a></li>
+                            <li><a href="#/inscripcion/listar " ng-click='navCollapsed = true'>Listar</a></li>
                         </ul>
                     </li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-if="displayLogout">
+                            <div style="padding-top: 14px;" class="logout">
+                                <button class="anchor" ng-click="logout()">Logout</button>
+                            </div>
+                        </li>
+                        <li ng-if="!displayLogout">
+                            <div style="padding-top: 14px;">
+                                <a href="#/login ">Login</a>
+                            </div>
+                        </li>
+                    </ul>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -110,11 +128,22 @@
 
     </div>
 
-    <div class="container">
+
+
+    <div class="container ">
         <ng-view></ng-view>
 
     </div>
-
+    <style>
+        .anchor {
+            background: none!important;
+            color: #337ab7;
+            border: none;
+            padding: 0!important;
+            font: inherit;
+            cursor: pointer;
+        }
+    </style>
 
 </body>
 
