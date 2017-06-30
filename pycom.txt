@@ -1,0 +1,28 @@
+python -m venv nombreenv
+Scripts\activate.bat
+
+pip install django
+
+(mover django-admin.py a la carpeta del env)
+python django-admin.py startproject nombreproj
+cd nombreproj
+python manage.py runserver
+python manage.py startapp nombreapp
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py createsuperuser
+(registrar modelos en admin.py)
+
+pip install djangorestframework
+
+agregar rest_framework a las apps instaladas en settings.py
+
+
+djangorestframework
+pip install django-filter
+
+pip freeze > requirements.txt
+
+pip install -r requirements.txt
