@@ -1,5 +1,7 @@
 python -m venv nombreenv
 Scripts\activate.bat
+si estás en linux source seminare_env/bin/activate
+
 
 pip install django
 
