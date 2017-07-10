@@ -5,74 +5,70 @@
         </div>
         <div class="panel-body">
 
-            <form class="form">
+            <form name="alumnoform">
                 <div class="form-group radio">
                     <label>
-                                <input type="radio" name="" value="" checked="checked">
+                                <input type="radio" name="" value="DNI" ng-model="alumno.tipo_doc" required>
                                 DNI
                             </label>
                     <label>
-                                <input type="radio" name="" value="" >
+                                <input type="radio" name=""ng-model="alumno.tipo_doc" value="DE" >
                                Doc Extranjero
                             </label>
                 </div>
                 <div class="form-group">
-                    <label>DNI:</label>
-                    <input type="text" name="" id="input" class="form-control" value="" placeholder="Ej: 38826011" required="required">
+                    <label>Documento:</label>
+                    <input type="text" name="" id="input" ng-model="alumno.numero_doc" class="form-control" placeholder="Ej: 38826011" required="required">
                 </div>
                 <div class="form-group">
                     <label>Apellido:</label>
-                    <input type="text" name="" id="input" class="form-control" value="" placeholder="Montes" required="required">
+                    <input type="text" name="" ng-model="alumno.apellido" id="input" class="form-control" placeholder="Montes" required="required">
                 </div>
                 <div class="form-group">
                     <label>Nombre:</label>
-                    <input type="text" name="" id="input" class="form-control" value="" placeholder="Juan" required="required">
+                    <input type="text" name="" id="input" ng-model="alumno.nombre" class="form-control" placeholder="Juan" required="required">
                 </div>
                 <div class="form-group">
                     <label>Telefono:</label>
-                    <input type="text" name="" id="input" class="form-control" value="">
+                    <input type="text" name="" ng-model="alumno.telefono" id="input" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Domicilio:</label>
-                    <input type="text" name="" id="input" class="form-control" value="">
+                    <input type="text" name="" ng-model="alumno.domicilio" id="input" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Localidad:</label>
-                    <input type="text" name="" id="input" class="form-control" value="">
+                    <input type="text" name="" ng-model="alumno.localidad" id="input" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Provinicia:</label>
-                    <select name="" id="input" class="form-control">
-                            <option value="">Seleccionar Provincia</option></select>
+                    <input type="text" name="" ng-model="alumno.provincia" id="input" class="form-control">
+
                 </div>
                 <div class="form-group">
                     <label>Codigo Postal:</label>
-                    <input type="text" name="" id="input" class="form-control" value="">
+                    <input type="text" name="" ng-model="alumno.cp" id="input" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Nacionalidad:</label>
-                    <input type="text" name="" id="input" class="form-control" value="">
+                    <input type="text" name="" ng-model="alumno.nacionalidad" id="input" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Pais de Origen:</label>
-                    <input type="text" name="" id="input" class="form-control" value="">
-                </div>
-                <div class="form-group">
-                    <label>Email:</label>
-                    <input type="text" name="" id="input" class="form-control" value="">
+                    <input type="text" name="" id="input" ng-model="alumno.pais" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Fecha Nacimiento</label>
-                    <input type="text" name="" id="input" class="form-control" value="" placeholder="dd/mm/yyy">
+                    <div uib-datepicker "alumno.fecha_nacimiento = (fecha_nacimiento | date: 'YYYY-MM-DD')" ng-model="fecha_nacimiento" class="well well-sm"></div>
                 </div>
-
+                <label>Género</label>
                 <div class="form-group radio">
                     <label>
-                                <input type="radio" name="" value="">
+                                <input type="radio" ng-model="alumno.genero" value="F" name="" >
                                 Femenino
                             </label>
                     <label>
-                                <input type="radio" name="" value="" checked="checked">
+                                <input type="radio" ng-model="alumno.genero" value="M"  checked="checked">
                                Masculino
                             </label>
                 </div>
@@ -81,29 +77,25 @@
                         <h3 class="panel-title">Estado</h3>
                     </div>
                     <div class="panel-body">
-                        <div class="form-group radio">
-                            <label>
-                                <input type="radio" name="" value="" checked="checked">
+                        <label>
+                                <input type="checkbox" name="" ng-model="alumno.activo">
                                Activo
                             </label>
-                            <label>
-                                <input type="radio" name="" value="" >
+                        <label>
+                                <input type="checkbox" name="" ng-model="alumno.egreso" >
                                Egresó
                             </label>
-                            <label>
-                                <input type="radio" name="" value="">
+                        <label>
+                                <input type="checkbox" name="" ng-model="alumno.abandono">
                                 Abandonó
                             </label>
-                        </div>
                         <div class="form-group">
                             <label>Año Egreso</label>
-                            <select name="" disabled id="input" class="form-control">
-                            <option value="">Seleccionar Año egreso</option></select>
+                            <input type="number" name="" ng-model="alumno.anio_egreso" ng-disabled="!alumno.egreso" class="form-control" value="" min="1980" max="2017" ng-disabled="!alumno.egreso">
                         </div>
                         <div class="form-group">
                             <label>Año abandono</label>
-                            <select name="" disabled id="input" class="form-control">
-                            <option value="">Seleccionar Año abandono</option></select>
+                            <input type="number" name="" ng-model="alumno.anio_abandono" class="form-control" value="" min="1980" max="2017" ng-disabled="!alumno.abandono" step="">
                         </div>
 
                     </div>
@@ -116,11 +108,11 @@
 
                         <div class="form-group">
                             <label>Escuela Origen</label>
-                            <input type="text" name="" id="input" class="form-control" value="">
+                            <input type="text" name="" ng-model="alumno.escuela_origen" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Tipo Escuela Origen</label>
-                            <input type="text" name="" id="input" class="form-control" value="">
+                            <input type="text" name="" id="input" ng-model="alumno.tipo_escuela_origen" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -132,18 +124,18 @@
 
                         <div class="form-group">
                             <label>Nro de Folio</label>
-                            <input type="text" name="" id="input" class="form-control" value="">
+                            <input type="text" ng-model="alumno.numero_folio" name="" id="input" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Nro de Libro Matriz</label>
-                            <input type="text" name="" id="input" class="form-control" value="">
+                            <input type="text" ng-model="alumno.libro_matriz" name="" id="input" class="form-control">
                         </div>
                     </div>
                 </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Guardar</button>
-    <button type="submit" class="btn btn-primary">Cancelar</button>
+    <button type="submit" ng-click="guardar()" class="btn btn-primary">Guardar</button>
+    <a href="/#/" class="btn btn-default">Cancelar</a>
     </form>
 
 

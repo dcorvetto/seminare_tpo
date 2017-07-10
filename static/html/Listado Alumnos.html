@@ -90,7 +90,7 @@
                         <td>{{a.nombre}}</td>
                         <td>{{a.numero_doc}}</td>
                         <td>{{a.inscripciones[0].curso.nombre}}</td>
-                        <td><a href="">Editar</a> | <a ng-click="eliminar(a.id)">Eliminar</a></td>
+                        <td><a href="#/alumno/modificar/{{a.id}}">Editar</a> | <a ng-click="eliminar(a.id)">Eliminar</a></td>
                     </tr>
                 </tbody>
             </table>

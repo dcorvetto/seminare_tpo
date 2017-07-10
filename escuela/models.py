@@ -11,7 +11,8 @@ class Alumno(models.Model):
     TIPOS_DOC = (
         ('DNI', 'Documento Nacional de Identidad'),
         ('LE', 'Libreta de enrolamiento'),
-        ('PS', 'Pasaporte')
+        ('PS', 'Pasaporte'),
+        ('DE', 'Documento Extranjero')
     )
     tipo_doc = models.CharField(max_length=3, choices=TIPOS_DOC, default=TIPOS_DOC[0][0])
     fecha_nacimiento = models.DateField(blank=True, null=True)
@@ -23,6 +24,7 @@ class Alumno(models.Model):
     anio_ingreso = models.CharField(blank=True, null=True, max_length=8)
     numero_folio = models.CharField(blank=True, null=True, max_length=40)
     libro_matriz = models.CharField(blank=True, null=True, max_length=40)
+    egreso = models.BooleanField(default=False)
     anio_egreso = models.IntegerField(blank=True, null=True, max_length=8)
     GENEROS = (
         ('M', 'Masculino'),
@@ -34,12 +36,15 @@ class Alumno(models.Model):
     escuela_origen = models.CharField(blank=True, null=True, max_length=40)
     cooperadora_paga = models.BooleanField(default=False)
     celular = models.CharField(blank=True, null=True, max_length=12)
-    lugar_nacimiento = models.CharField(blank=True, null=True, max_length=40)
+    nacionalidad = models.CharField(blank=True, null=True, max_length=40)
     tipo_escuela_origen = models.CharField(blank=True, null=True, max_length=40) #TODO: agregar choices
     pais = models.CharField(blank=True, null=True, max_length=40)
     partida_nacimiento = models.BooleanField(default=False)
     fotocopia_dni = models.BooleanField(default=False)
     certificado_estudios = models.BooleanField(default=False)
+    abandono = models.BooleanField(default=False)
+    anio_abandono = models.IntegerField(blank=True, null=True, max_length=8)
+    activo = models.BooleanField(default=True)
 
     def __str__(self):
         return self.nombre
@@ -99,7 +104,6 @@ class Docente(models.Model):
     fecha_ingreso = models.DateField(blank=True, null=True)
     fecha_egreso = models.DateField(blank=True, null=True)
     libro_matriz = models.CharField(blank=True, null=True, max_length=40)
-    anio_egreso = models.IntegerField(blank=True, null=True, max_length=8)
     GENEROS = (
         ('M', 'Masculino'),
         ('F', 'Femenino'),
@@ -108,7 +112,6 @@ class Docente(models.Model):
     genero = models.CharField(blank=True, null=True, max_length=1, choices=GENEROS)
     activo = models.BooleanField(default=True)
     licencia = models.BooleanField(default=False)
-    baja = models.BooleanField(default=False)
     calificacion = models.CharField(blank=True, null=True, max_length=40)
 
     def __str__(self):

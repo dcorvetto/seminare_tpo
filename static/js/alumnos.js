@@ -22,10 +22,9 @@
      function AlumnosModificar($scope, $http, $routeParams) {
 
          // cargarPlanes($scope, $http);
-         $http.get('/escuela/Alumnos/' + $routeParams.id + '/')
+         $http.get('/escuela/alumnos/' + $routeParams.id + '/')
              .then(function(response) {
                      $scope.alumno = (response.data);
-                     $scope.alumno.plan = $scope.alumno.plan.toString();
                  },
                  function() {
                      alert('Error buscando alumno');
@@ -33,7 +32,11 @@
                  }
              );
          $scope.guardar = function() {
-             $http.put('/escuela/Alumnos/' + $routeParams.id + '/', $scope.alumno)
+             if (!$scope.alumno.numero_doc) {
+                 alert("El número de documento es un campo requerido.")
+                 return;
+             }
+             $http.put('/escuela/alumnos/' + $routeParams.id + '/', $scope.alumno)
                  .then(function(response) {
                          alert('alumno modificado con éxito.');
                          window.location = "#/alumno/listar"
@@ -49,8 +52,12 @@
      function AlumnosAlta($scope, $http) {
          //cargarPlanes($scope, $http);
          $scope.anio = 2017;
-         //$scope.alumno = { plan: "", nombre: "", activo: true, anio_lectivo: 2017 };
+         $scope.alumno = { activo: true };
          $scope.guardar = function() {
+             if (!$scope.alumno.numero_doc) {
+                 alert("El número de documento es un campo requerido.")
+                 return;
+             }
              $http.post('/escuela/alumnos/', $scope.alumno)
                  .then(function(response) {
                          alert('alumno cargado con éxito.');
@@ -65,6 +72,7 @@
 
      function ListadoAlumnosController($scope, $http) {
          cargarCursos($scope, $http);
+         $scope.search = {};
          $scope.buscar = function() {
              Object.keys($scope.search).map(function(key, index) {
                  if (!$scope.search[key]) {
