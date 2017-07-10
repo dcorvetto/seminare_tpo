@@ -2,6 +2,7 @@ from rest_framework.viewsets import ModelViewSet
 from .models import *
 from .serializers import *
 from rest_framework.permissions import IsAuthenticated
+from django.db.models import Q
 
 class MultiSerializerViewSet(ModelViewSet):
     serializers = {
@@ -12,9 +13,42 @@ class MultiSerializerViewSet(ModelViewSet):
             return self.serializers.get(self.action,
                         self.serializers['default'])
 
-class AlumnoViewSet(ModelViewSet):
+class AlumnoViewSet(MultiSerializerViewSet):
     queryset = Alumno.objects.all()
-    serializer_class = AlumnoSerializer
+    serializers = {
+        'default':    AlumnoSerializer,
+        'create':  AlumnoPostSerializer,
+        'retrieve': AlumnoPostSerializer,
+        'update': AlumnoPostSerializer,
+        # 'destroy': CursoDeleteSerializer
+    }
+
+    def get_queryset(self):
+        queryset = Alumno.objects.all()
+        nombre = self.request.query_params.get('nombre', None)
+        apellido = self.request.query_params.get('nombre', None)
+        curso = self.request.query_params.get('curso', None)
+        numero_doc = self.request.query_params.get('numero_doc', None)
+        numero_folio = self.request.query_params.get('numero_folio', None)
+        libro_matriz = self.request.query_params.get('libro_matriz', None)
+        genero = self.request.query_params.get('genero', None)
+        curso_estado = self.request.query_params.get('curso_estado', None)
+        
+        if nombre is not None:
+            queryset = queryset.filter(Q(nombre__contains=curso_nombre) | Q(apellido__contains=curso_nombre))
+        if curso is not None:
+             queryset = queryset.filter(inscripciones__curso__pk=curso)
+        if numero_doc is not None:
+            queryset = queryset.filter(numero_doc=numero_doc)
+        if numero_folio is not None:
+            queryset = queryset.filter(numero_folio=numero_folio)
+        if libro_matriz is not None:
+            queryset = queryset.filter(libro_matriz=libro_matriz)
+        if genero is not None:
+            queryset = queryset.filter(genero=genero)
+        if curso_estado is not None:
+            queryset = queryset.filter(inscripciones__estado=curso_estado)
+        return queryset.order_by("apellido")
 
 
 class CursoViewSet(MultiSerializerViewSet):
@@ -23,7 +57,8 @@ class CursoViewSet(MultiSerializerViewSet):
         'default':    CursoSerializer,
         'create':  CursoPostSerializer,
         'retrieve': CursoPostSerializer,
-        'update': CursoPostSerializer
+        'update': CursoPostSerializer,
+        # 'destroy': CursoDeleteSerializer
     }
 
 
@@ -50,7 +85,7 @@ class MateriaViewSet(MultiSerializerViewSet):
         'default':    MateriaSerializer,
         'create':  MateriaPostSerializer,
         'retrieve': MateriaPostSerializer,
-        'update': MateriaPostSerializer
+        'update': MateriaPostSerializer,
     }
 
 

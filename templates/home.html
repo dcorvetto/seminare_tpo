@@ -7,33 +7,38 @@
     <title>Sistema de Administración C.E.N.S. Nro 4</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
-   <script src="{% static 'lib/ui-bootstrap-tpls-2.5.0.min.js' %}"></script>
+    <script src="{% static 'lib/ui-bootstrap-tpls-2.5.0.min.js' %}"></script>
     <script src="{% static 'js/app.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/login.controller.js' %}"></script>
     <script src="{% static 'js/login.service.js' %}"></script>
     <script src="{% static 'js/cursos.js' %}"></script>
     <script src="{% static 'js/materias.js' %}"></script>
+    <script src="{% static 'js/alumnos.js' %}"></script>
     <script src="{% static 'js/run.js' %}"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script>
-  $(document).ready(function() {
-    $('.navbar a.dropdown-toggle').on('click', function(e) {
-        var $el = $(this);
-        var $parent = $(this).offsetParent(".dropdown-menu");
-        $(this).parent("li").toggleClass('open');
+        $(document).ready(function() {
+            $('.navbar a.dropdown-toggle').on('click', function(e) {
+                var $el = $(this);
+                var $parent = $(this).offsetParent(".dropdown-menu");
+                $(this).parent("li").toggleClass('open');
 
-        if(!$parent.parent().hasClass('nav')) {
-            $el.next().css({"top": $el[0].offsetTop, "left": $parent.outerWidth() - 4});
-        }
+                if (!$parent.parent().hasClass('nav')) {
+                    $el.next().css({
+                        "top": $el[0].offsetTop,
+                        "left": $parent.outerWidth() - 4
+                    });
+                }
 
-        $('.nav li.open').not($(this).parents("li")).removeClass("open");
+                $('.nav li.open').not($(this).parents("li")).removeClass("open");
 
-        return false;
-    });
-});</script>
+                return false;
+            });
+        });
+    </script>
 </head>
 
 <body ng-app="app">
@@ -51,39 +56,42 @@
             <span class="icon-bar "></span>
             <span class="icon-bar "></span>
           </button>
-                <a class="navbar-brand " href="#"> <a class="navbar-brand " href="# "><img src="{% static 'images/logo_cens4.jpg' %}" width="auto;" height="35px;" style="mix-blend-mode: multiply;"></img></a>
+                <a class="navbar-brand " href="#">
+                    <a class="navbar-brand " href="# "><img src="{% static 'images/logo_cens4.jpg' %}" width="auto;" height="35px;" style="mix-blend-mode: multiply;"></img>
+                    </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse "   ng-class="!navCollapsed && 'in' ">
+            <div class="collapse navbar-collapse " ng-class="!navCollapsed && 'in' ">
 
                 <ul class="nav navbar-nav ">
-                    <li><a href="#/ " ng-click='navCollapsed = true'>Home</a></li>                   
+                    <li><a href="#/ " ng-click='navCollapsed = true'>Home</a></li>
                     <li class="dropdown " uib-dropdown>
                         <a class="dropdown-toggle " uib-dropdown-toggle>
                             <i class="fa fa-cogs "></i> Alumno
                             <span class="caret "></span>
                         </a>
                         <ul class="dropdown-menu " role="menu ">
-                            
+
                             <li><a href="#/alumno/listar " ng-click='navCollapsed = true'>Buscar</a></li>
                             <li><a href="#/alumno/alta " ng-click='navCollapsed = true'>Alta</a></li>
                             <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inscripción<b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inscripción<b class="caret"></b></a>
 
-                                    <ul class="dropdown-menu">
-                                         <li><a href="#/inscripcion/alta">Inscribir</a></li>
-                                        <li><a href="#/inscripcion/listar">Ver Inscripciones</a></li>
-                                  
-                                    </ul>
-                                </li>                                <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calificaciones <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#/inscripcion/alta">Inscribir</a></li>
+                                    <li><a href="#/inscripcion/listar">Ver Inscripciones</a></li>
 
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#/calificacion/listar">Buscar</a></li>
-                                       <li><a href="#/calificacion/alta">Alta</a></li>
-                                    </ul>
-                                </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calificaciones <b class="caret"></b></a>
+
+                                <ul class="dropdown-menu">
+                                    <li><a href="#/calificacion/listar">Buscar</a></li>
+                                    <li><a href="#/calificacion/alta">Alta</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <li class="dropdown " uib-dropdown>
@@ -96,8 +104,8 @@
                             <li><a href="#/docente/alta " ng-click='navCollapsed = true'>Alta</a></li>
                         </ul>
                     </li>
-                   
-                   <li class="dropdown " uib-dropdown>
+
+                    <li class="dropdown " uib-dropdown>
                         <a class="dropdown-toggle " uib-dropdown-toggle>
                             <i class="fa fa-cogs "></i> Plan
                             <span class="caret "></span>
@@ -106,16 +114,16 @@
                             <li><a href="#/plan/listar " ng-click='navCollapsed = true'>Buscar</a></li>
                             <li><a href="#/plan/alta " ng-click='navCollapsed = true'>Alta</a></li>
                             <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cursos <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cursos <b class="caret"></b></a>
 
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#/curso/listar">Buscar</a></li>
-                                       <li><a href="#/curso/alta">Alta</a></li>
-                                    </ul>
-                                </li>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#/curso/listar">Buscar</a></li>
+                                    <li><a href="#/curso/alta">Alta</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
-                     <li class="dropdown " uib-dropdown>
+                    <li class="dropdown " uib-dropdown>
                         <a class="dropdown-toggle " uib-dropdown-toggle>
                             <i class="fa fa-cogs "></i> Materia
                             <span class="caret "></span>
@@ -131,7 +139,7 @@
                                 <button class="anchor" ng-click="logout()">Salir</button>
                             </div>
                         </li>
-                        <li ng-if="!displayLogout " >
+                        <li ng-if="!displayLogout ">
                             <div style="padding-top: 14px; ">
                                 <a href="#/login ">Login</a>
                             </div>

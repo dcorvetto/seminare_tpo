@@ -34,6 +34,22 @@
                 templateUrl: '/static/html/Alta Materia.html',
                 controller: 'MateriaAlta'
             })
+            .when('/materia/modificar/:id', {
+                templateUrl: '/static/html/Alta Materia.html',
+                controller: 'MateriaModificar'
+            })
+            .when('/alumno/listar', {
+                templateUrl: '/static/html/Listado Alumnos.html',
+                controller: 'ListadoAlumnosController'
+            })
+            .when('/alumno/alta', {
+                templateUrl: '/static/html/Alta Alumno.html',
+                controller: 'AlumnosAlta'
+            })
+            .when('/alumno/modificar/:id', {
+                templateUrl: '/static/html/Alta Alumno.html',
+                controller: 'AlumnosModificar'
+            })
             .when('/login', {
                 templateUrl: '/static/html/login.html',
                 controller: 'LoginController'

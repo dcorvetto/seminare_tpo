@@ -48,7 +48,7 @@
                     <tr ng-repeat="materia in materias">
                         <td>{{ materia.nombre }}</td>
                         <td>{{ materia.plan.nombre }}</td>
-                        <td><a href="#/materia/modificar/{{ curso.id }}" target="_self">Editar</a> | <a ng-click="eliminar(materia.id)">Eliminar</a></td>
+                        <td><a href="#/materia/modificar/{{ materia.id }}" target="_self">Editar</a> | <a ng-click="eliminar(materia.id)">Eliminar</a></td>
 
                     </tr>
                 </tbody>

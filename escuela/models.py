@@ -20,7 +20,8 @@ class Alumno(models.Model):
     cp = models.CharField(blank=True, null=True, max_length=8)
     localidad = models.CharField(blank=True, null=True, max_length=50)
     provincia = models.CharField(blank=True, null=True, max_length=40)
-    anio_ingreeo = models.CharField(blank=True, null=True, max_length=8)
+    anio_ingreso = models.CharField(blank=True, null=True, max_length=8)
+    numero_folio = models.CharField(blank=True, null=True, max_length=40)
     libro_matriz = models.CharField(blank=True, null=True, max_length=40)
     anio_egreso = models.IntegerField(blank=True, null=True, max_length=8)
     GENEROS = (

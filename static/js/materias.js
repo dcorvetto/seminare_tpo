@@ -7,6 +7,7 @@
 
      //app.controller('CursosModificar', ['$scope', '$http', '$routeParams', CursosModificar]);
      app.controller('MateriaAlta', ['$scope', '$http', MateriaAlta]);
+     app.controller('MateriaModificar', ['$scope', '$http', '$routeParams', MateriaModificar]);
      app.controller('ListadoMateriasController', ['$scope', '$http', ListadoMateriasController]);
 
      function cargarPlanes($scope, $http) {
@@ -19,6 +20,31 @@
                  }
              );
      }
+
+     function MateriaModificar($scope, $http, $routeParams) {
+         cargarPlanes($scope, $http);
+         $http.get('/escuela/materias/' + $routeParams.id + '/')
+             .then(function(response) {
+                     $scope.materia = (response.data);
+                     $scope.materia.plan = $scope.materia.plan.toString();
+                 },
+                 function() {
+                     alert('Error buscando materia');
+                     window.location = "#/"
+                 }
+             );
+         $scope.guardar = function() {
+             $http.put('/escuela/materias/' + $routeParams.id + '/', $scope.materia)
+                 .then(function(response) {
+                         alert('Materia cargada con éxito.');
+                         window.location = "#/materia/listar"
+                     },
+                     function(response) {
+                         alert(response.status);
+                     }
+                 );
+         }
+     };
 
      function MateriaAlta($scope, $http) {
          cargarPlanes($scope, $http);
