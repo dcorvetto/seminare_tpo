@@ -10,65 +10,73 @@
 0004_auto_20170615_2014.py	../escuela/migrations/0004_auto_20170615_2014.py	1;"	kind:file	line:1
 0005_curso_nombre.py	../escuela/migrations/0005_curso_nombre.py	1;"	kind:file	line:1
 0006_curso_activo.py	../escuela/migrations/0006_curso_activo.py	1;"	kind:file	line:1
+0007_auto_20170709_2250.py	../escuela/migrations/0007_auto_20170709_2250.py	1;"	kind:file	line:1
+0008_auto_20170710_0155.py	../escuela/migrations/0008_auto_20170710_0155.py	1;"	kind:file	line:1
+0009_alumno_activo.py	../escuela/migrations/0009_alumno_activo.py	1;"	kind:file	line:1
+0010_alumno_egreso.py	../escuela/migrations/0010_alumno_egreso.py	1;"	kind:file	line:1
 ADMIN	../seminare_tpo/settings.py	/^ADMIN = [('JC', 'jcmontes95@gmail.com')]$/;"	kind:variable	line:30
 ALLOWED_HOSTS	../seminare_tpo/settings.py	/^ALLOWED_HOSTS = ['*']$/;"	kind:variable	line:28
 AUTHENTICATION_BACKENDS	../seminare_tpo/settings.py	/^AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']$/;"	kind:variable	line:67
 AUTH_PASSWORD_VALIDATORS	../seminare_tpo/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:108
 Alumno	../escuela/models.py	/^class Alumno(models.Model):$/;"	kind:class	line:7
-AlumnoPostSerializer	../escuela/serializers.py	/^class AlumnoPostSerializer(serializers.ModelSerializer):$/;"	kind:class	line:10
-AlumnoSerializer	../escuela/serializers.py	/^class AlumnoSerializer(serializers.ModelSerializer):$/;"	kind:class	line:5
-AlumnoViewSet	../escuela/api.py	/^class AlumnoViewSet(MultiSerializerViewSet):$/;"	kind:class	line:15
+AlumnoPostSerializer	../escuela/serializers.py	/^class AlumnoPostSerializer(serializers.ModelSerializer):$/;"	kind:class	line:6
+AlumnoSerializer	../escuela/serializers.py	/^class AlumnoSerializer(serializers.ModelSerializer):$/;"	kind:class	line:81
+AlumnoViewSet	../escuela/api.py	/^class AlumnoViewSet(MultiSerializerViewSet):$/;"	kind:class	line:16
 BASE_DIR	../seminare_tpo/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
-Calificacion	../escuela/models.py	/^class Calificacion(models.Model):$/;"	kind:class	line:117
-CalificacionSerializer	../escuela/serializers.py	/^class CalificacionSerializer(serializers.ModelSerializer):$/;"	kind:class	line:76
-CalificacionViewSet	../escuela/api.py	/^class CalificacionViewSet(ModelViewSet):$/;"	kind:class	line:86
-Curso	../escuela/models.py	/^class Curso(models.Model):$/;"	kind:class	line:54
-CursoPostSerializer	../escuela/serializers.py	/^class CursoPostSerializer(serializers.ModelSerializer):$/;"	kind:class	line:29
-CursoSerializer	../escuela/serializers.py	/^class CursoSerializer(serializers.ModelSerializer):$/;"	kind:class	line:21
-CursoViewSet	../escuela/api.py	/^class CursoViewSet(MultiSerializerViewSet):$/;"	kind:class	line:26
+Calificacion	../escuela/models.py	/^class Calificacion(models.Model):$/;"	kind:class	line:121
+CalificacionSerializer	../escuela/serializers.py	/^class CalificacionSerializer(serializers.ModelSerializer):$/;"	kind:class	line:75
+CalificacionViewSet	../escuela/api.py	/^class CalificacionViewSet(ModelViewSet):$/;"	kind:class	line:114
+Curso	../escuela/models.py	/^class Curso(models.Model):$/;"	kind:class	line:60
+CursoPostSerializer	../escuela/serializers.py	/^class CursoPostSerializer(serializers.ModelSerializer):$/;"	kind:class	line:26
+CursoSerializer	../escuela/serializers.py	/^class CursoSerializer(serializers.ModelSerializer):$/;"	kind:class	line:18
+CursoViewSet	../escuela/api.py	/^class CursoViewSet(MultiSerializerViewSet):$/;"	kind:class	line:54
 DATABASES	../seminare_tpo/settings.py	/^DATABASES = {$/;"	kind:variable	line:97
 DEBUG	../seminare_tpo/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
-Docente	../escuela/models.py	/^class Docente(models.Model):$/;"	kind:class	line:81
-DocenteSerializer	../escuela/serializers.py	/^class DocenteSerializer(serializers.ModelSerializer):$/;"	kind:class	line:56
-DocenteViewSet	../escuela/api.py	/^class DocenteViewSet(ModelViewSet):$/;"	kind:class	line:81
+Docente	../escuela/models.py	/^class Docente(models.Model):$/;"	kind:class	line:87
+DocenteSerializer	../escuela/serializers.py	/^class DocenteSerializer(serializers.ModelSerializer):$/;"	kind:class	line:55
+DocenteViewSet	../escuela/api.py	/^class DocenteViewSet(ModelViewSet):$/;"	kind:class	line:109
 EmailBackend	../auth_api/auth_backend.py	/^class EmailBackend(object):$/;"	kind:class	line:4
 EscuelaConfig	../escuela/apps.py	/^class EscuelaConfig(AppConfig):$/;"	kind:class	line:4
-GENEROS	../escuela/models.py	/^    GENEROS = ($/;"	kind:variable	line:102
-GENEROS	../escuela/models.py	/^    GENEROS = ($/;"	kind:variable	line:26
+GENEROS	../escuela/models.py	/^    GENEROS = ($/;"	kind:variable	line:107
+GENEROS	../escuela/models.py	/^    GENEROS = ($/;"	kind:variable	line:29
 INSTALLED_APPS	../seminare_tpo/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:34
-Inscripcion	../escuela/models.py	/^class Inscripcion(models.Model):$/;"	kind:class	line:64
-InscripcionSerializer	../escuela/serializers.py	/^class InscripcionSerializer(serializers.ModelSerializer):$/;"	kind:class	line:50
-InscripcionViewSet	../escuela/api.py	/^class InscripcionViewSet(ModelViewSet):$/;"	kind:class	line:76
+Inscripcion	../escuela/models.py	/^class Inscripcion(models.Model):$/;"	kind:class	line:70
+InscripcionSerializer	../escuela/serializers.py	/^class InscripcionSerializer(serializers.ModelSerializer):$/;"	kind:class	line:47
+InscripcionViewSet	../escuela/api.py	/^class InscripcionViewSet(ModelViewSet):$/;"	kind:class	line:104
 IsSurvey	../escuela/permissions.py	/^class IsSurvey(permissions.BasePermission):$/;"	kind:class	line:3
 LANGUAGE_CODE	../seminare_tpo/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:127
 LoginView	../auth_api/api.py	/^class LoginView(views.APIView):$/;"	kind:class	line:11
 LogoutView	../auth_api/api.py	/^class LogoutView(views.APIView):$/;"	kind:class	line:29
 MIDDLEWARE	../seminare_tpo/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:46
-Materia	../escuela/models.py	/^class Materia(models.Model):$/;"	kind:class	line:71
-MateriaPostSerializer	../escuela/serializers.py	/^class MateriaPostSerializer(serializers.ModelSerializer):$/;"	kind:class	line:69
-MateriaSerializer	../escuela/serializers.py	/^class MateriaSerializer(serializers.ModelSerializer):$/;"	kind:class	line:62
-MateriaViewSet	../escuela/api.py	/^class MateriaViewSet(MultiSerializerViewSet):$/;"	kind:class	line:54
+Materia	../escuela/models.py	/^class Materia(models.Model):$/;"	kind:class	line:77
+MateriaPostSerializer	../escuela/serializers.py	/^class MateriaPostSerializer(serializers.ModelSerializer):$/;"	kind:class	line:68
+MateriaSerializer	../escuela/serializers.py	/^class MateriaSerializer(serializers.ModelSerializer):$/;"	kind:class	line:61
+MateriaViewSet	../escuela/api.py	/^class MateriaViewSet(MultiSerializerViewSet):$/;"	kind:class	line:82
 Meta	../auth_api/serializers.py	/^    class Meta:$/;"	kind:class	line:7
-Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:11
-Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:16
-Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:24
-Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:32
-Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:51
-Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:57
-Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:6
-Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:65
-Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:72
-Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:77
+Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:13
+Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:21
+Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:29
+Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:50
+Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:56
+Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:64
+Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:71
+Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:76
+Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:8
+Meta	../escuela/serializers.py	/^    class Meta:$/;"	kind:class	line:84
 Migration	../escuela/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:9
 Migration	../escuela/migrations/0002_calificacion_nota.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
 Migration	../escuela/migrations/0003_alumno_tipo_doc.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
 Migration	../escuela/migrations/0004_auto_20170615_2014.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
 Migration	../escuela/migrations/0005_curso_nombre.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
 Migration	../escuela/migrations/0006_curso_activo.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
-MultiSerializerViewSet	../escuela/api.py	/^class MultiSerializerViewSet(ModelViewSet):$/;"	kind:class	line:6
-Plan	../escuela/models.py	/^class Plan(models.Model):$/;"	kind:class	line:47
-PlanSerializer	../escuela/serializers.py	/^class PlanSerializer(serializers.ModelSerializer):$/;"	kind:class	line:15
-PlanViewSet	../escuela/api.py	/^class PlanViewSet(ModelViewSet):$/;"	kind:class	line:49
+Migration	../escuela/migrations/0007_auto_20170709_2250.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
+Migration	../escuela/migrations/0008_auto_20170710_0155.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
+Migration	../escuela/migrations/0009_alumno_activo.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
+Migration	../escuela/migrations/0010_alumno_egreso.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
+MultiSerializerViewSet	../escuela/api.py	/^class MultiSerializerViewSet(ModelViewSet):$/;"	kind:class	line:7
+Plan	../escuela/models.py	/^class Plan(models.Model):$/;"	kind:class	line:53
+PlanSerializer	../escuela/serializers.py	/^class PlanSerializer(serializers.ModelSerializer):$/;"	kind:class	line:12
+PlanViewSet	../escuela/api.py	/^class PlanViewSet(ModelViewSet):$/;"	kind:class	line:77
 REST_FRAMEWORK	../seminare_tpo/settings.py	/^REST_FRAMEWORK = {$/;"	kind:variable	line:70
 ROOT_URLCONF	../seminare_tpo/settings.py	/^ROOT_URLCONF = 'seminare_tpo.urls'$/;"	kind:variable	line:73
 STATICFILES_DIRS	../seminare_tpo/settings.py	/^STATICFILES_DIRS = ($/;"	kind:variable	line:64
@@ -78,7 +86,7 @@ STATIC_URL	../seminare_tpo/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:vari
 TEMPLATES	../seminare_tpo/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:75
 TIME_ZONE	../seminare_tpo/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:129
 TIPOS_DOC	../escuela/models.py	/^    TIPOS_DOC = ($/;"	kind:variable	line:11
-TIPOS_DOC	../escuela/models.py	/^    TIPOS_DOC = ($/;"	kind:variable	line:86
+TIPOS_DOC	../escuela/models.py	/^    TIPOS_DOC = ($/;"	kind:variable	line:92
 USE_I18N	../seminare_tpo/settings.py	/^USE_I18N = True$/;"	kind:variable	line:131
 USE_L10N	../seminare_tpo/settings.py	/^USE_L10N = True$/;"	kind:variable	line:133
 USE_TZ	../seminare_tpo/settings.py	/^USE_TZ = True$/;"	kind:variable	line:135
@@ -89,56 +97,63 @@ __init__.py	../auth_api/migrations/__init__.py	1;"	kind:file	line:1
 __init__.py	../escuela/__init__.py	1;"	kind:file	line:1
 __init__.py	../escuela/migrations/__init__.py	1;"	kind:file	line:1
 __init__.py	../seminare_tpo/__init__.py	1;"	kind:file	line:1
-__str__	../escuela/models.py	/^    def __str__(self):$/;"	kind:member	line:113
-__str__	../escuela/models.py	/^    def __str__(self):$/;"	kind:member	line:126
-__str__	../escuela/models.py	/^    def __str__(self):$/;"	kind:member	line:43
-__str__	../escuela/models.py	/^    def __str__(self):$/;"	kind:member	line:50
-__str__	../escuela/models.py	/^    def __str__(self):$/;"	kind:member	line:60
-__str__	../escuela/models.py	/^    def __str__(self):$/;"	kind:member	line:77
-activa	../escuela/models.py	/^    activa = models.BooleanField(default=True)$/;"	kind:variable	line:75
-activo	../escuela/models.py	/^    activo = models.BooleanField(default=True)$/;"	kind:variable	line:108
-activo	../escuela/models.py	/^    activo = models.BooleanField(default=True)$/;"	kind:variable	line:58
+__str__	../escuela/models.py	/^    def __str__(self):$/;"	kind:member	line:117
+__str__	../escuela/models.py	/^    def __str__(self):$/;"	kind:member	line:130
+__str__	../escuela/models.py	/^    def __str__(self):$/;"	kind:member	line:49
+__str__	../escuela/models.py	/^    def __str__(self):$/;"	kind:member	line:56
+__str__	../escuela/models.py	/^    def __str__(self):$/;"	kind:member	line:66
+__str__	../escuela/models.py	/^    def __str__(self):$/;"	kind:member	line:83
+abandono	../escuela/models.py	/^    abandono = models.BooleanField(default=False)$/;"	kind:variable	line:45
+activa	../escuela/models.py	/^    activa = models.BooleanField(default=True)$/;"	kind:variable	line:81
+activo	../escuela/models.py	/^    activo = models.BooleanField(default=True)$/;"	kind:variable	line:113
+activo	../escuela/models.py	/^    activo = models.BooleanField(default=True)$/;"	kind:variable	line:47
+activo	../escuela/models.py	/^    activo = models.BooleanField(default=True)$/;"	kind:variable	line:64
 admin.py	../escuela/admin.py	1;"	kind:file	line:1
-alumno	../escuela/models.py	/^    alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE, related_name="calificaciones")$/;"	kind:variable	line:121
-alumno	../escuela/models.py	/^    alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE, related_name="inscripciones")$/;"	kind:variable	line:65
-anio_egreso	../escuela/models.py	/^    anio_egreso = models.IntegerField(blank=True, null=True, max_length=8)$/;"	kind:variable	line:101
-anio_egreso	../escuela/models.py	/^    anio_egreso = models.IntegerField(blank=True, null=True, max_length=8)$/;"	kind:variable	line:25
-anio_ingreeo	../escuela/models.py	/^    anio_ingreeo = models.CharField(blank=True, null=True, max_length=8)$/;"	kind:variable	line:23
-anio_lectivo	../escuela/models.py	/^    anio_lectivo = models.IntegerField(null=True, blank=True)$/;"	kind:variable	line:55
-apellido	../escuela/models.py	/^    apellido = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:84
+alumno	../escuela/models.py	/^    alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE, related_name="calificaciones")$/;"	kind:variable	line:125
+alumno	../escuela/models.py	/^    alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE, related_name="inscripciones")$/;"	kind:variable	line:71
+anio_abandono	../escuela/models.py	/^    anio_abandono = models.IntegerField(blank=True, null=True, max_length=8)$/;"	kind:variable	line:46
+anio_egreso	../escuela/models.py	/^    anio_egreso = models.IntegerField(blank=True, null=True, max_length=8)$/;"	kind:variable	line:28
+anio_ingreso	../escuela/models.py	/^    anio_ingreso = models.CharField(blank=True, null=True, max_length=8)$/;"	kind:variable	line:24
+anio_lectivo	../escuela/models.py	/^    anio_lectivo = models.IntegerField(null=True, blank=True)$/;"	kind:variable	line:61
 apellido	../escuela/models.py	/^    apellido = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:9
+apellido	../escuela/models.py	/^    apellido = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:90
 api.py	../auth_api/api.py	1;"	kind:file	line:1
 api.py	../escuela/api.py	1;"	kind:file	line:1
 application	../seminare_tpo/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
 apps.py	../escuela/apps.py	1;"	kind:file	line:1
 auth_backend.py	../auth_api/auth_backend.py	1;"	kind:file	line:1
 authenticate	../auth_api/auth_backend.py	/^    def authenticate(self, username=None, password=None, **kwargs):$/;"	kind:member	line:5
-baja	../escuela/models.py	/^    baja = models.BooleanField(default=False)$/;"	kind:variable	line:110
-calificacion	../escuela/models.py	/^    calificacion = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:111
-celular	../escuela/models.py	/^    celular = models.CharField(blank=True, null=True, max_length=12)$/;"	kind:variable	line:35
-certificado_estudios	../escuela/models.py	/^    certificado_estudios = models.BooleanField(default=False)$/;"	kind:variable	line:41
-cooperadora_paga	../escuela/models.py	/^    cooperadora_paga = models.BooleanField(default=False)$/;"	kind:variable	line:34
-cp	../escuela/models.py	/^    cp = models.CharField(blank=True, null=True, max_length=8)$/;"	kind:variable	line:20
-cp	../escuela/models.py	/^    cp = models.CharField(blank=True, null=True, max_length=8)$/;"	kind:variable	line:95
-curso	../escuela/models.py	/^    curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name="calificaciones")$/;"	kind:variable	line:123
-curso	../escuela/models.py	/^    curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name="inscripciones")$/;"	kind:variable	line:66
+calificacion	../escuela/models.py	/^    calificacion = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:115
+celular	../escuela/models.py	/^    celular = models.CharField(blank=True, null=True, max_length=12)$/;"	kind:variable	line:38
+certificado_estudios	../escuela/models.py	/^    certificado_estudios = models.BooleanField(default=False)$/;"	kind:variable	line:44
+cooperadora_paga	../escuela/models.py	/^    cooperadora_paga = models.BooleanField(default=False)$/;"	kind:variable	line:37
+cp	../escuela/models.py	/^    cp = models.CharField(blank=True, null=True, max_length=8)$/;"	kind:variable	line:101
+cp	../escuela/models.py	/^    cp = models.CharField(blank=True, null=True, max_length=8)$/;"	kind:variable	line:21
+curso	../escuela/models.py	/^    curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name="calificaciones")$/;"	kind:variable	line:127
+curso	../escuela/models.py	/^    curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name="inscripciones")$/;"	kind:variable	line:72
+curso	../escuela/serializers.py	/^    curso = CursoSerializer(read_only=True, many=False)$/;"	kind:variable	line:48
 dependencies	../escuela/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:13
 dependencies	../escuela/migrations/0002_calificacion_nota.py	/^    dependencies = [$/;"	kind:variable	line:10
 dependencies	../escuela/migrations/0003_alumno_tipo_doc.py	/^    dependencies = [$/;"	kind:variable	line:10
 dependencies	../escuela/migrations/0004_auto_20170615_2014.py	/^    dependencies = [$/;"	kind:variable	line:10
 dependencies	../escuela/migrations/0005_curso_nombre.py	/^    dependencies = [$/;"	kind:variable	line:10
 dependencies	../escuela/migrations/0006_curso_activo.py	/^    dependencies = [$/;"	kind:variable	line:10
-docente	../escuela/models.py	/^    docente = models.ForeignKey(Docente, on_delete=models.CASCADE, related_name="calificaciones")$/;"	kind:variable	line:124
-domicilio	../escuela/models.py	/^    domicilio = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:19
-domicilio	../escuela/models.py	/^    domicilio = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:94
-escuela_origen	../escuela/models.py	/^    escuela_origen = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:33
-estado	../escuela/models.py	/^    estado = models.CharField(blank=True, null=True, max_length=4) # TODO: agregar choices$/;"	kind:variable	line:67
-estado_pase	../escuela/models.py	/^    estado_pase = models.CharField(blank=True, null=True, max_length=4) # TODO: agregar choices$/;"	kind:variable	line:68
-fecha	../escuela/models.py	/^    fecha = models.DateField(blank=True, null=True)$/;"	kind:variable	line:119
-fecha_egreso	../escuela/models.py	/^    fecha_egreso = models.DateField(blank=True, null=True)$/;"	kind:variable	line:99
-fecha_ingreso	../escuela/models.py	/^    fecha_ingreso = models.DateField(blank=True, null=True)$/;"	kind:variable	line:98
-fecha_nacimiento	../escuela/models.py	/^    fecha_nacimiento = models.DateField(blank=True, null=True)$/;"	kind:variable	line:17
-fecha_nacimiento	../escuela/models.py	/^    fecha_nacimiento = models.DateField(blank=True, null=True)$/;"	kind:variable	line:92
+dependencies	../escuela/migrations/0007_auto_20170709_2250.py	/^    dependencies = [$/;"	kind:variable	line:10
+dependencies	../escuela/migrations/0008_auto_20170710_0155.py	/^    dependencies = [$/;"	kind:variable	line:10
+dependencies	../escuela/migrations/0009_alumno_activo.py	/^    dependencies = [$/;"	kind:variable	line:10
+dependencies	../escuela/migrations/0010_alumno_egreso.py	/^    dependencies = [$/;"	kind:variable	line:10
+docente	../escuela/models.py	/^    docente = models.ForeignKey(Docente, on_delete=models.CASCADE, related_name="calificaciones")$/;"	kind:variable	line:128
+domicilio	../escuela/models.py	/^    domicilio = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:100
+domicilio	../escuela/models.py	/^    domicilio = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:20
+egreso	../escuela/models.py	/^    egreso = models.BooleanField(default=False)$/;"	kind:variable	line:27
+escuela_origen	../escuela/models.py	/^    escuela_origen = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:36
+estado	../escuela/models.py	/^    estado = models.CharField(blank=True, null=True, max_length=4) # TODO: agregar choices$/;"	kind:variable	line:73
+estado_pase	../escuela/models.py	/^    estado_pase = models.CharField(blank=True, null=True, max_length=4) # TODO: agregar choices$/;"	kind:variable	line:74
+fecha	../escuela/models.py	/^    fecha = models.DateField(blank=True, null=True)$/;"	kind:variable	line:123
+fecha_egreso	../escuela/models.py	/^    fecha_egreso = models.DateField(blank=True, null=True)$/;"	kind:variable	line:105
+fecha_ingreso	../escuela/models.py	/^    fecha_ingreso = models.DateField(blank=True, null=True)$/;"	kind:variable	line:104
+fecha_nacimiento	../escuela/models.py	/^    fecha_nacimiento = models.DateField(blank=True, null=True)$/;"	kind:variable	line:18
+fecha_nacimiento	../escuela/models.py	/^    fecha_nacimiento = models.DateField(blank=True, null=True)$/;"	kind:variable	line:98
 field	../escuela/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='calificaciones', to='escuela.Curso'),$/;"	kind:variable	line:87
 field	../escuela/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='calificaciones', to='escuela.Docente'),$/;"	kind:variable	line:92
 field	../escuela/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='calificaciones', to='escuela.Materia'),$/;"	kind:variable	line:97
@@ -199,6 +214,12 @@ field	../escuela/migrations/0004_auto_20170615_2014.py	/^            field=model
 field	../escuela/migrations/0004_auto_20170615_2014.py	/^            field=models.TextField(blank=True, null=True),$/;"	kind:variable	line:88
 field	../escuela/migrations/0005_curso_nombre.py	/^            field=models.CharField(default='Primer curso', max_length=40),$/;"	kind:variable	line:18
 field	../escuela/migrations/0006_curso_activo.py	/^            field=models.BooleanField(default=True),$/;"	kind:variable	line:18
+field	../escuela/migrations/0007_auto_20170709_2250.py	/^            field=models.CharField(blank=True, max_length=40, null=True),$/;"	kind:variable	line:23
+field	../escuela/migrations/0008_auto_20170710_0155.py	/^            field=models.BooleanField(default=False),$/;"	kind:variable	line:31
+field	../escuela/migrations/0008_auto_20170710_0155.py	/^            field=models.CharField(choices=[('DNI', 'Documento Nacional de Identidad'), ('LE', 'Libreta de enrolamiento'), ('PS', 'Pasaporte'), ('DE', 'Documento Extranjero')], default='DNI', max_length=3),$/;"	kind:variable	line:41
+field	../escuela/migrations/0008_auto_20170710_0155.py	/^            field=models.IntegerField(blank=True, max_length=8, null=True),$/;"	kind:variable	line:36
+field	../escuela/migrations/0009_alumno_activo.py	/^            field=models.BooleanField(default=True),$/;"	kind:variable	line:18
+field	../escuela/migrations/0010_alumno_egreso.py	/^            field=models.BooleanField(default=False),$/;"	kind:variable	line:18
 fields	../auth_api/serializers.py	/^        fields = ('id', 'username')$/;"	kind:variable	line:9
 fields	../escuela/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:19
 fields	../escuela/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:28
@@ -207,47 +228,48 @@ fields	../escuela/migrations/0001_initial.py	/^            fields=[$/;"	kind:var
 fields	../escuela/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:49
 fields	../escuela/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:57
 fields	../escuela/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:64
-fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:13
-fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:18
-fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:26
-fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:34
-fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:53
-fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:59
-fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:67
-fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:74
-fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:79
-fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:8
-fotocopia_dni	../escuela/models.py	/^    fotocopia_dni = models.BooleanField(default=False)$/;"	kind:variable	line:40
-genero	../escuela/models.py	/^    genero = models.CharField(blank=True, null=True, max_length=1, choices=GENEROS)$/;"	kind:variable	line:107
-genero	../escuela/models.py	/^    genero = models.CharField(blank=True, null=True, max_length=1, choices=GENEROS)$/;"	kind:variable	line:31
+fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:10
+fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:15
+fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:23
+fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:31
+fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:52
+fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:58
+fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:66
+fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:73
+fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:78
+fields	../escuela/serializers.py	/^        fields = '__all__'$/;"	kind:variable	line:86
+fotocopia_dni	../escuela/models.py	/^    fotocopia_dni = models.BooleanField(default=False)$/;"	kind:variable	line:43
+genero	../escuela/models.py	/^    genero = models.CharField(blank=True, null=True, max_length=1, choices=GENEROS)$/;"	kind:variable	line:112
+genero	../escuela/models.py	/^    genero = models.CharField(blank=True, null=True, max_length=1, choices=GENEROS)$/;"	kind:variable	line:34
 get	../auth_api/api.py	/^    def get(self, request):$/;"	kind:member	line:31
-get_queryset	../escuela/api.py	/^    def get_queryset(self):$/;"	kind:member	line:37
-get_queryset	../escuela/api.py	/^    def get_queryset(self):$/;"	kind:member	line:64
-get_serializer_class	../escuela/api.py	/^    def get_serializer_class(self):$/;"	kind:member	line:11
+get_queryset	../escuela/api.py	/^    def get_queryset(self):$/;"	kind:member	line:26
+get_queryset	../escuela/api.py	/^    def get_queryset(self):$/;"	kind:member	line:65
+get_queryset	../escuela/api.py	/^    def get_queryset(self):$/;"	kind:member	line:92
+get_serializer_class	../escuela/api.py	/^    def get_serializer_class(self):$/;"	kind:member	line:12
 get_user	../auth_api/auth_backend.py	/^    def get_user(self, user_id):$/;"	kind:member	line:16
 has_object_permission	../escuela/permissions.py	/^    def has_object_permission(self, request, view, obj):$/;"	kind:member	line:6
-horas	../escuela/models.py	/^    horas = models.IntegerField(blank=True, null=True, max_length=8)$/;"	kind:variable	line:74
+horas	../escuela/models.py	/^    horas = models.IntegerField(blank=True, null=True, max_length=8)$/;"	kind:variable	line:80
 initial	../escuela/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:11
-libro_matriz	../escuela/models.py	/^    libro_matriz = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:100
-libro_matriz	../escuela/models.py	/^    libro_matriz = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:24
-licencia	../escuela/models.py	/^    licencia = models.BooleanField(default=False)$/;"	kind:variable	line:109
-localidad	../escuela/models.py	/^    localidad = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:21
-localidad	../escuela/models.py	/^    localidad = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:96
-lugar_nacimiento	../escuela/models.py	/^    lugar_nacimiento = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:36
+inscripciones	../escuela/serializers.py	/^    inscripciones = InscripcionSerializer(read_only=True, many=True)$/;"	kind:variable	line:82
+libro_matriz	../escuela/models.py	/^    libro_matriz = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:106
+libro_matriz	../escuela/models.py	/^    libro_matriz = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:26
+licencia	../escuela/models.py	/^    licencia = models.BooleanField(default=False)$/;"	kind:variable	line:114
+localidad	../escuela/models.py	/^    localidad = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:102
+localidad	../escuela/models.py	/^    localidad = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:22
 manage.py	../manage.py	1;"	kind:file	line:1
-materia	../escuela/models.py	/^    materia = models.ForeignKey(Materia, on_delete=models.CASCADE, related_name="calificaciones")$/;"	kind:variable	line:122
-materias	../escuela/models.py	/^    materias = models.ManyToManyField('Materia', blank=True, related_name="docentes")$/;"	kind:variable	line:82
+materia	../escuela/models.py	/^    materia = models.ForeignKey(Materia, on_delete=models.CASCADE, related_name="calificaciones")$/;"	kind:variable	line:126
+materias	../escuela/models.py	/^    materias = models.ManyToManyField('Materia', blank=True, related_name="docentes")$/;"	kind:variable	line:88
 model	../auth_api/serializers.py	/^        model = User$/;"	kind:variable	line:8
-model	../escuela/serializers.py	/^        model = Alumno$/;"	kind:variable	line:12
-model	../escuela/serializers.py	/^        model = Alumno$/;"	kind:variable	line:7
-model	../escuela/serializers.py	/^        model = Calificacion$/;"	kind:variable	line:78
-model	../escuela/serializers.py	/^        model = Curso$/;"	kind:variable	line:25
-model	../escuela/serializers.py	/^        model = Curso$/;"	kind:variable	line:33
-model	../escuela/serializers.py	/^        model = Docente$/;"	kind:variable	line:58
-model	../escuela/serializers.py	/^        model = Inscripcion$/;"	kind:variable	line:52
-model	../escuela/serializers.py	/^        model = Materia$/;"	kind:variable	line:66
-model	../escuela/serializers.py	/^        model = Materia$/;"	kind:variable	line:73
-model	../escuela/serializers.py	/^        model = Plan$/;"	kind:variable	line:17
+model	../escuela/serializers.py	/^        model = Alumno$/;"	kind:variable	line:85
+model	../escuela/serializers.py	/^        model = Alumno$/;"	kind:variable	line:9
+model	../escuela/serializers.py	/^        model = Calificacion$/;"	kind:variable	line:77
+model	../escuela/serializers.py	/^        model = Curso$/;"	kind:variable	line:22
+model	../escuela/serializers.py	/^        model = Curso$/;"	kind:variable	line:30
+model	../escuela/serializers.py	/^        model = Docente$/;"	kind:variable	line:57
+model	../escuela/serializers.py	/^        model = Inscripcion$/;"	kind:variable	line:51
+model	../escuela/serializers.py	/^        model = Materia$/;"	kind:variable	line:65
+model	../escuela/serializers.py	/^        model = Materia$/;"	kind:variable	line:72
+model	../escuela/serializers.py	/^        model = Plan$/;"	kind:variable	line:14
 model_name	../escuela/migrations/0001_initial.py	/^            model_name='calificacion',$/;"	kind:variable	line:85
 model_name	../escuela/migrations/0001_initial.py	/^            model_name='calificacion',$/;"	kind:variable	line:90
 model_name	../escuela/migrations/0001_initial.py	/^            model_name='calificacion',$/;"	kind:variable	line:95
@@ -308,7 +330,18 @@ model_name	../escuela/migrations/0004_auto_20170615_2014.py	/^            model_
 model_name	../escuela/migrations/0004_auto_20170615_2014.py	/^            model_name='plan',$/;"	kind:variable	line:262
 model_name	../escuela/migrations/0005_curso_nombre.py	/^            model_name='curso',$/;"	kind:variable	line:16
 model_name	../escuela/migrations/0006_curso_activo.py	/^            model_name='curso',$/;"	kind:variable	line:16
+model_name	../escuela/migrations/0007_auto_20170709_2250.py	/^            model_name='alumno',$/;"	kind:variable	line:16
+model_name	../escuela/migrations/0007_auto_20170709_2250.py	/^            model_name='alumno',$/;"	kind:variable	line:21
+model_name	../escuela/migrations/0008_auto_20170710_0155.py	/^            model_name='alumno',$/;"	kind:variable	line:16
+model_name	../escuela/migrations/0008_auto_20170710_0155.py	/^            model_name='alumno',$/;"	kind:variable	line:29
+model_name	../escuela/migrations/0008_auto_20170710_0155.py	/^            model_name='alumno',$/;"	kind:variable	line:34
+model_name	../escuela/migrations/0008_auto_20170710_0155.py	/^            model_name='alumno',$/;"	kind:variable	line:39
+model_name	../escuela/migrations/0008_auto_20170710_0155.py	/^            model_name='docente',$/;"	kind:variable	line:21
+model_name	../escuela/migrations/0008_auto_20170710_0155.py	/^            model_name='docente',$/;"	kind:variable	line:25
+model_name	../escuela/migrations/0009_alumno_activo.py	/^            model_name='alumno',$/;"	kind:variable	line:16
+model_name	../escuela/migrations/0010_alumno_egreso.py	/^            model_name='alumno',$/;"	kind:variable	line:16
 models.py	../escuela/models.py	1;"	kind:file	line:1
+nacionalidad	../escuela/models.py	/^    nacionalidad = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:39
 name	../escuela/apps.py	/^    name = 'escuela'$/;"	kind:variable	line:5
 name	../escuela/migrations/0001_initial.py	/^            name='Alumno',$/;"	kind:variable	line:18
 name	../escuela/migrations/0001_initial.py	/^            name='Calificacion',$/;"	kind:variable	line:27
@@ -377,62 +410,79 @@ name	../escuela/migrations/0004_auto_20170615_2014.py	/^            name='tipo_d
 name	../escuela/migrations/0004_auto_20170615_2014.py	/^            name='tipo_escuela_origen',$/;"	kind:variable	line:112
 name	../escuela/migrations/0005_curso_nombre.py	/^            name='nombre',$/;"	kind:variable	line:17
 name	../escuela/migrations/0006_curso_activo.py	/^            name='activo',$/;"	kind:variable	line:17
-nombre	../escuela/models.py	/^    nombre = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:48
-nombre	../escuela/models.py	/^    nombre = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:72
+name	../escuela/migrations/0007_auto_20170709_2250.py	/^            name='numero_folio',$/;"	kind:variable	line:22
+name	../escuela/migrations/0008_auto_20170710_0155.py	/^            name='abandono',$/;"	kind:variable	line:30
+name	../escuela/migrations/0008_auto_20170710_0155.py	/^            name='anio_abandono',$/;"	kind:variable	line:35
+name	../escuela/migrations/0008_auto_20170710_0155.py	/^            name='anio_egreso',$/;"	kind:variable	line:22
+name	../escuela/migrations/0008_auto_20170710_0155.py	/^            name='baja',$/;"	kind:variable	line:26
+name	../escuela/migrations/0008_auto_20170710_0155.py	/^            name='tipo_doc',$/;"	kind:variable	line:40
+name	../escuela/migrations/0009_alumno_activo.py	/^            name='activo',$/;"	kind:variable	line:17
+name	../escuela/migrations/0010_alumno_egreso.py	/^            name='egreso',$/;"	kind:variable	line:17
+new_name	../escuela/migrations/0007_auto_20170709_2250.py	/^            new_name='anio_ingreso',$/;"	kind:variable	line:18
+new_name	../escuela/migrations/0008_auto_20170710_0155.py	/^            new_name='nacionalidad',$/;"	kind:variable	line:18
+nombre	../escuela/models.py	/^    nombre = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:54
+nombre	../escuela/models.py	/^    nombre = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:78
 nombre	../escuela/models.py	/^    nombre = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:8
-nombre	../escuela/models.py	/^    nombre = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:83
-nombre	../escuela/models.py	/^    nombre = models.CharField(max_length=40)$/;"	kind:variable	line:56
-nota	../escuela/models.py	/^    nota = models.FloatField(default=1)$/;"	kind:variable	line:118
+nombre	../escuela/models.py	/^    nombre = models.CharField(blank=True, null=True, max_length=50)$/;"	kind:variable	line:89
+nombre	../escuela/models.py	/^    nombre = models.CharField(max_length=40)$/;"	kind:variable	line:62
+nota	../escuela/models.py	/^    nota = models.FloatField(default=1)$/;"	kind:variable	line:122
 numero_doc	../escuela/models.py	/^    numero_doc = models.CharField(max_length=15)$/;"	kind:variable	line:10
-numero_doc	../escuela/models.py	/^    numero_doc = models.CharField(max_length=15)$/;"	kind:variable	line:85
-observaciones	../escuela/models.py	/^    observaciones = models.TextField(blank=True, null=True)$/;"	kind:variable	line:32
+numero_doc	../escuela/models.py	/^    numero_doc = models.CharField(max_length=15)$/;"	kind:variable	line:91
+numero_folio	../escuela/models.py	/^    numero_folio = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:25
+observaciones	../escuela/models.py	/^    observaciones = models.TextField(blank=True, null=True)$/;"	kind:variable	line:35
+old_name	../escuela/migrations/0007_auto_20170709_2250.py	/^            old_name='anio_ingreeo',$/;"	kind:variable	line:17
+old_name	../escuela/migrations/0008_auto_20170710_0155.py	/^            old_name='lugar_nacimiento',$/;"	kind:variable	line:17
 operations	../escuela/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:16
 operations	../escuela/migrations/0002_calificacion_nota.py	/^    operations = [$/;"	kind:variable	line:14
 operations	../escuela/migrations/0003_alumno_tipo_doc.py	/^    operations = [$/;"	kind:variable	line:14
 operations	../escuela/migrations/0004_auto_20170615_2014.py	/^    operations = [$/;"	kind:variable	line:14
 operations	../escuela/migrations/0005_curso_nombre.py	/^    operations = [$/;"	kind:variable	line:14
 operations	../escuela/migrations/0006_curso_activo.py	/^    operations = [$/;"	kind:variable	line:14
-pais	../escuela/models.py	/^    pais = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:38
-partida_nacimiento	../escuela/models.py	/^    partida_nacimiento = models.BooleanField(default=False)$/;"	kind:variable	line:39
+operations	../escuela/migrations/0007_auto_20170709_2250.py	/^    operations = [$/;"	kind:variable	line:14
+operations	../escuela/migrations/0008_auto_20170710_0155.py	/^    operations = [$/;"	kind:variable	line:14
+operations	../escuela/migrations/0009_alumno_activo.py	/^    operations = [$/;"	kind:variable	line:14
+operations	../escuela/migrations/0010_alumno_egreso.py	/^    operations = [$/;"	kind:variable	line:14
+pais	../escuela/models.py	/^    pais = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:41
+partida_nacimiento	../escuela/models.py	/^    partida_nacimiento = models.BooleanField(default=False)$/;"	kind:variable	line:42
 permissions.py	../escuela/permissions.py	1;"	kind:file	line:1
-plan	../escuela/models.py	/^    plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name="cursos")$/;"	kind:variable	line:57
-plan	../escuela/models.py	/^    plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name="materias")$/;"	kind:variable	line:73
-plan	../escuela/serializers.py	/^    plan = PlanSerializer(read_only=True, many=False)$/;"	kind:variable	line:22
-plan	../escuela/serializers.py	/^    plan = PlanSerializer(read_only=True, many=False)$/;"	kind:variable	line:63
-plan	../escuela/serializers.py	/^    plan = serializers.PrimaryKeyRelatedField(queryset=Plan.objects.all())$/;"	kind:variable	line:30
-plan	../escuela/serializers.py	/^    plan = serializers.PrimaryKeyRelatedField(queryset=Plan.objects.all())$/;"	kind:variable	line:70
+plan	../escuela/models.py	/^    plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name="cursos")$/;"	kind:variable	line:63
+plan	../escuela/models.py	/^    plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name="materias")$/;"	kind:variable	line:79
+plan	../escuela/serializers.py	/^    plan = PlanSerializer(read_only=True, many=False)$/;"	kind:variable	line:19
+plan	../escuela/serializers.py	/^    plan = PlanSerializer(read_only=True, many=False)$/;"	kind:variable	line:62
+plan	../escuela/serializers.py	/^    plan = serializers.PrimaryKeyRelatedField(queryset=Plan.objects.all())$/;"	kind:variable	line:27
+plan	../escuela/serializers.py	/^    plan = serializers.PrimaryKeyRelatedField(queryset=Plan.objects.all())$/;"	kind:variable	line:69
 post	../auth_api/api.py	/^    def post(self, request):$/;"	kind:member	line:14
 preserve_default	../escuela/migrations/0003_alumno_tipo_doc.py	/^            preserve_default=False,$/;"	kind:variable	line:19
 preserve_default	../escuela/migrations/0004_auto_20170615_2014.py	/^            preserve_default=False,$/;"	kind:variable	line:199
 preserve_default	../escuela/migrations/0005_curso_nombre.py	/^            preserve_default=False,$/;"	kind:variable	line:19
-provincia	../escuela/models.py	/^    provincia = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:22
-provincia	../escuela/models.py	/^    provincia = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:97
-queryset	../escuela/api.py	/^    queryset = Alumno.objects.all()$/;"	kind:variable	line:16
-queryset	../escuela/api.py	/^    queryset = Calificacion.objects.all()$/;"	kind:variable	line:87
-queryset	../escuela/api.py	/^    queryset = Curso.objects.all()$/;"	kind:variable	line:27
-queryset	../escuela/api.py	/^    queryset = Docente.objects.all()$/;"	kind:variable	line:82
-queryset	../escuela/api.py	/^    queryset = Inscripcion.objects.all()$/;"	kind:variable	line:77
-queryset	../escuela/api.py	/^    queryset = Materia.objects.all()$/;"	kind:variable	line:55
-queryset	../escuela/api.py	/^    queryset = Plan.objects.all()$/;"	kind:variable	line:50
+provincia	../escuela/models.py	/^    provincia = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:103
+provincia	../escuela/models.py	/^    provincia = models.CharField(blank=True, null=True, max_length=40)$/;"	kind:variable	line:23
+queryset	../escuela/api.py	/^    queryset = Alumno.objects.all()$/;"	kind:variable	line:17
+queryset	../escuela/api.py	/^    queryset = Calificacion.objects.all()$/;"	kind:variable	line:115
+queryset	../escuela/api.py	/^    queryset = Curso.objects.all()$/;"	kind:variable	line:55
+queryset	../escuela/api.py	/^    queryset = Docente.objects.all()$/;"	kind:variable	line:110
+queryset	../escuela/api.py	/^    queryset = Inscripcion.objects.all()$/;"	kind:variable	line:105
+queryset	../escuela/api.py	/^    queryset = Materia.objects.all()$/;"	kind:variable	line:83
+queryset	../escuela/api.py	/^    queryset = Plan.objects.all()$/;"	kind:variable	line:78
 router	../escuela/urls.py	/^router = DefaultRouter()$/;"	kind:variable	line:4
-serializer_class	../escuela/api.py	/^    serializer_class = CalificacionSerializer$/;"	kind:variable	line:88
-serializer_class	../escuela/api.py	/^    serializer_class = DocenteSerializer$/;"	kind:variable	line:83
-serializer_class	../escuela/api.py	/^    serializer_class = InscripcionSerializer$/;"	kind:variable	line:78
-serializer_class	../escuela/api.py	/^    serializer_class = PlanSerializer$/;"	kind:variable	line:51
-serializers	../escuela/api.py	/^    serializers = {$/;"	kind:variable	line:17
-serializers	../escuela/api.py	/^    serializers = {$/;"	kind:variable	line:28
+serializer_class	../escuela/api.py	/^    serializer_class = CalificacionSerializer$/;"	kind:variable	line:116
+serializer_class	../escuela/api.py	/^    serializer_class = DocenteSerializer$/;"	kind:variable	line:111
+serializer_class	../escuela/api.py	/^    serializer_class = InscripcionSerializer$/;"	kind:variable	line:106
+serializer_class	../escuela/api.py	/^    serializer_class = PlanSerializer$/;"	kind:variable	line:79
+serializers	../escuela/api.py	/^    serializers = {$/;"	kind:variable	line:18
 serializers	../escuela/api.py	/^    serializers = {$/;"	kind:variable	line:56
-serializers	../escuela/api.py	/^    serializers = {$/;"	kind:variable	line:7
+serializers	../escuela/api.py	/^    serializers = {$/;"	kind:variable	line:8
+serializers	../escuela/api.py	/^    serializers = {$/;"	kind:variable	line:84
 serializers.py	../auth_api/serializers.py	1;"	kind:file	line:1
 serializers.py	../escuela/serializers.py	1;"	kind:file	line:1
 settings.py	../seminare_tpo/settings.py	1;"	kind:file	line:1
-telefono	../escuela/models.py	/^    telefono = models.CharField(blank=True, null=True, max_length=12)$/;"	kind:variable	line:18
-telefono	../escuela/models.py	/^    telefono = models.CharField(blank=True, null=True, max_length=12)$/;"	kind:variable	line:93
+telefono	../escuela/models.py	/^    telefono = models.CharField(blank=True, null=True, max_length=12)$/;"	kind:variable	line:19
+telefono	../escuela/models.py	/^    telefono = models.CharField(blank=True, null=True, max_length=12)$/;"	kind:variable	line:99
 tests.py	../escuela/tests.py	1;"	kind:file	line:1
-tipo	../escuela/models.py	/^    tipo = models.CharField(blank=True, null=True, max_length=4) #TODO: agregar choices$/;"	kind:variable	line:120
-tipo_doc	../escuela/models.py	/^    tipo_doc = models.CharField(max_length=3, choices=TIPOS_DOC, default=TIPOS_DOC[0][0])$/;"	kind:variable	line:16
-tipo_doc	../escuela/models.py	/^    tipo_doc = models.CharField(max_length=3, choices=TIPOS_DOC, default=TIPOS_DOC[0][0])$/;"	kind:variable	line:91
-tipo_escuela_origen	../escuela/models.py	/^    tipo_escuela_origen = models.CharField(blank=True, null=True, max_length=40) #TODO: agregar choices$/;"	kind:variable	line:37
+tipo	../escuela/models.py	/^    tipo = models.CharField(blank=True, null=True, max_length=4) #TODO: agregar choices$/;"	kind:variable	line:124
+tipo_doc	../escuela/models.py	/^    tipo_doc = models.CharField(max_length=3, choices=TIPOS_DOC, default=TIPOS_DOC[0][0])$/;"	kind:variable	line:17
+tipo_doc	../escuela/models.py	/^    tipo_doc = models.CharField(max_length=3, choices=TIPOS_DOC, default=TIPOS_DOC[0][0])$/;"	kind:variable	line:97
+tipo_escuela_origen	../escuela/models.py	/^    tipo_escuela_origen = models.CharField(blank=True, null=True, max_length=40) #TODO: agregar choices$/;"	kind:variable	line:40
 urlpatterns	../auth_api/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
 urlpatterns	../escuela/urls.py	/^urlpatterns = router.urls/;"	kind:variable	line:13
 urlpatterns	../seminare_tpo/urls.py	/^urlpatterns = [$/;"	kind:variable	line:20

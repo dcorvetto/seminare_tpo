@@ -50,6 +50,18 @@
                 templateUrl: '/static/html/Alta Alumno.html',
                 controller: 'AlumnosModificar'
             })
+            .when('/plan/listar', {
+                templateUrl: '/static/html/Listado Planes.html',
+                controller: 'ListadoPlanesController'
+            })
+            .when('/plan/alta', {
+                templateUrl: '/static/html/Alta Plan.html',
+                controller: 'PlanesAlta'
+            })
+            .when('/plan/modificar/:id', {
+                templateUrl: '/static/html/Alta Plan.html',
+                controller: 'PlanesModificar'
+            })
             .when('/login', {
                 templateUrl: '/static/html/login.html',
                 controller: 'LoginController'

@@ -78,6 +78,14 @@ class PlanViewSet(ModelViewSet):
     queryset = Plan.objects.all()
     serializer_class = PlanSerializer
 
+    def get_queryset(self):
+        queryset = Plan.objects.all()
+        nombre = self.request.query_params.get('nombre', None)
+
+        if nombre is not None:
+            queryset = queryset.filter(nombre__contains=nombre)
+        return queryset
+
 
 class MateriaViewSet(MultiSerializerViewSet):
     queryset = Materia.objects.all()

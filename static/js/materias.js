@@ -21,12 +21,25 @@
              );
      }
 
+     function cargarDocentes($scope, $http) {
+         $http.get('/escuela/docentes/')
+             .then(function(response) {
+                     $scope.docentes = (response.data);
+                 },
+                 function() {
+                     alert('Error buscando planes');
+                 }
+             );
+     }
+
      function MateriaModificar($scope, $http, $routeParams) {
          cargarPlanes($scope, $http);
+         cargarDocentes($scope, $http);
          $http.get('/escuela/materias/' + $routeParams.id + '/')
              .then(function(response) {
                      $scope.materia = (response.data);
                      $scope.materia.plan = $scope.materia.plan.toString();
+                     $scope.materia.docente = $scope.materia.docente.toString();
                  },
                  function() {
                      alert('Error buscando materia');
@@ -48,8 +61,7 @@
 
      function MateriaAlta($scope, $http) {
          cargarPlanes($scope, $http);
-         // $scope.anio = 2017;
-         // $scope.curso = { plan: "", nombre: "", activo: true, anio_lectivo: 2017 };
+         cargarDocentes($scope, $http);
          $scope.guardar = function() {
              $http.post('/escuela/materias/?format=json', $scope.materia)
                  .then(function(response) {

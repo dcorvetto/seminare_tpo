@@ -67,6 +67,7 @@ class MateriaSerializer(serializers.ModelSerializer):
 
 class MateriaPostSerializer(serializers.ModelSerializer):
     plan = serializers.PrimaryKeyRelatedField(queryset=Plan.objects.all())
+    docente = serializers.PrimaryKeyRelatedField(queryset=Docente.objects.all())
     
     class Meta:
         model = Materia
