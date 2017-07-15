@@ -51,7 +51,7 @@ class Alumno(models.Model):
 
 
 class Plan(models.Model):
-    nombre = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=100)
 
     def __str__(self):
         return self.nombre
@@ -59,8 +59,8 @@ class Plan(models.Model):
 
 class Curso(models.Model):
     anio_lectivo = models.IntegerField(null=True, blank=True)
-    nombre = models.CharField(max_length=40)
-    plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name="cursos")
+    nombre = models.CharField(max_length=40, unique=True)
+    plan = models.ForeignKey(Plan, on_delete=models.PROTECT, related_name="cursos")
     activo = models.BooleanField(default=True)
 
     def __str__(self):
@@ -69,9 +69,9 @@ class Curso(models.Model):
 
 class Inscripcion(models.Model):
     alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE, related_name="inscripciones")
-    curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name="inscripciones")
-    estado = models.CharField(blank=True, null=True, max_length=4) # TODO: agregar choices
-    estado_pase = models.CharField(blank=True, null=True, max_length=4) # TODO: agregar choices
+    curso = models.ForeignKey(Curso, on_delete=models.PROTECT, related_name="inscripciones")
+    estado = models.CharField(blank=True, null=True, max_length=4) 
+    estado_pase = models.CharField(blank=True, null=True, max_length=4)
 
 
 class Docente(models.Model):
@@ -84,6 +84,7 @@ class Docente(models.Model):
         ('PS', 'Pasaporte')
     )
     tipo_doc = models.CharField(max_length=3, choices=TIPOS_DOC, default=TIPOS_DOC[0][0])
+    cuil = models.CharField(blank=True, null=True, max_length=40)
     fecha_nacimiento = models.DateField(blank=True, null=True)
     telefono = models.CharField(blank=True, null=True, max_length=12)
     domicilio = models.CharField(blank=True, null=True, max_length=50)
@@ -98,9 +99,13 @@ class Docente(models.Model):
         ('F', 'Femenino'),
         ('O', 'Otro')
     )
+    estado = models.CharField(max_length=10, default="activo")
     genero = models.CharField(blank=True, null=True, max_length=1, choices=GENEROS)
-    activo = models.BooleanField(default=True)
-    licencia = models.BooleanField(default=False)
+    fecha_licencia_desde = models.DateField(blank=True, null=True)
+    fecha_licencia_hasta = models.DateField(blank=True, null=True)
+    tipo_licencia = models.CharField(max_length=15, blank=True, null=True)
+    fecha_suspendido_desde = models.DateField(blank=True, null=True)
+    fecha_suspendido_hasta = models.DateField(blank=True, null=True)
     calificacion = models.CharField(blank=True, null=True, max_length=40)
 
     def __str__(self):

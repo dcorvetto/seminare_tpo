@@ -95,7 +95,7 @@
                          $scope.buscar()
                      },
                      function() {
-                         alert('Error eliminando plan.');
+                         alert('Error eliminando plan: el plan tiene cursos asociados.');
                      }
                  );
          };

@@ -13,8 +13,15 @@
              .then(function(response) {
                      $scope.cursos = (response.data);
                  },
-                 function() {
-                     alert('Error buscando cursos');
+                 function(response) {
+                     var errors = "";
+                     Object.keys(response.data).map(function(e) {
+                             return e + ": " + response.data[e] + '\n';
+                         })
+                         .forEach(function(e) {
+                             errors = errors + e;
+                         });
+                     alert(errors);
                  }
              );
      }
@@ -42,7 +49,14 @@
                          window.location = "#/alumno/listar"
                      },
                      function(response) {
-                         alert(response.status);
+                         var errors = "";
+                         Object.keys(response.data).map(function(e) {
+                                 return e + ": " + response.data[e] + '\n';
+                             })
+                             .forEach(function(e) {
+                                 errors = errors + e;
+                             });
+                         alert(errors);
                      }
                  );
          }

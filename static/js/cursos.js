@@ -39,7 +39,7 @@
                          window.location = "#/curso/listar"
                      },
                      function(response) {
-                         alert(response.status);
+                         alert(response.data.reduce(function(e) { return e + '\n'; }));
                      }
                  );
          }
@@ -57,7 +57,14 @@
                          window.location = "#/curso/listar"
                      },
                      function(response) {
-                         alert(response.status);
+                         var errors = "";
+                         Object.keys(response.data).map(function(e) {
+                                 return e + ": " + response.data[e] + '\n';
+                             })
+                             .forEach(function(e) {
+                                 errors = errors + e;
+                             });
+                         alert(errors);
                      }
                  );
          }
@@ -95,7 +102,7 @@
                          $scope.buscar()
                      },
                      function() {
-                         alert('Error eliminando curso.');
+                         alert('Error eliminando curso: el curso tiene inscripciones asociadas.');
                      }
                  );
          };
