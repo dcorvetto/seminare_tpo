@@ -40,6 +40,7 @@ class Alumno(models.Model):
     tipo_escuela_origen = models.CharField(blank=True, null=True, max_length=40) #TODO: agregar choices
     pais = models.CharField(blank=True, null=True, max_length=40)
     partida_nacimiento = models.BooleanField(default=False)
+    foto = models.BooleanField(default=False)
     fotocopia_dni = models.BooleanField(default=False)
     certificado_estudios = models.BooleanField(default=False)
     abandono = models.BooleanField(default=False)
@@ -70,8 +71,8 @@ class Curso(models.Model):
 class Inscripcion(models.Model):
     alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE, related_name="inscripciones")
     curso = models.ForeignKey(Curso, on_delete=models.PROTECT, related_name="inscripciones")
-    estado = models.CharField(blank=True, null=True, max_length=4) 
-    estado_pase = models.CharField(blank=True, null=True, max_length=4)
+    estado = models.CharField(blank=True, null=True, max_length=30, default="Confirmada") 
+    estado_pase = models.CharField(blank=True, null=True, max_length=30, default="No aplica")
 
 
 class Docente(models.Model):

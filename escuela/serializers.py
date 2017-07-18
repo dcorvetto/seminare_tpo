@@ -46,6 +46,16 @@ class CursoPostSerializer(serializers.ModelSerializer):
 
 class InscripcionSerializer(serializers.ModelSerializer):
     curso = CursoSerializer(read_only=True, many=False)
+    alumno = AlumnoPostSerializer(read_only=True, many=False)
+
+    class Meta:
+        model = Inscripcion
+        fields = '__all__'
+
+
+class InscripcionPostSerializer(serializers.ModelSerializer):
+    curso = serializers.PrimaryKeyRelatedField(queryset=Curso.objects.all())
+    alumno = serializers.PrimaryKeyRelatedField(queryset=Alumno.objects.all())
 
     class Meta:
         model = Inscripcion

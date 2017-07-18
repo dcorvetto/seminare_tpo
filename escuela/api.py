@@ -35,7 +35,7 @@ class AlumnoViewSet(MultiSerializerViewSet):
         curso_estado = self.request.query_params.get('curso_estado', None)
         
         if nombre is not None:
-            queryset = queryset.filter(Q(nombre__contains=curso_nombre) | Q(apellido__contains=curso_nombre))
+            queryset = queryset.filter(Q(nombre__contains=nombre) | Q(apellido__contains=nombre))
         if curso is not None:
              queryset = queryset.filter(inscripciones__curso__pk=curso)
         if numero_doc is not None:
@@ -109,9 +109,27 @@ class MateriaViewSet(MultiSerializerViewSet):
         return queryset
 
 
-class InscripcionViewSet(ModelViewSet):
+class InscripcionViewSet(MultiSerializerViewSet):
     queryset = Inscripcion.objects.all()
-    serializer_class = InscripcionSerializer
+
+    serializers = {
+        'default':    InscripcionSerializer,
+        'create':  InscripcionPostSerializer,
+        'retrieve': InscripcionPostSerializer,
+        'update': InscripcionPostSerializer,
+        # 'destroy': CursoDeleteSerializer
+    }
+
+    def get_queryset(self):
+        queryset = Inscripcion.objects.all()
+        curso_id = self.request.query_params.get('curso_id', None)
+        estado = self.request.query_params.get('estado', None)
+
+        if estado is not None:
+            queryset = queryset.filter(estado=estado)
+        if curso_id is not None:
+            queryset = queryset.filter(curso_id=curso_id)
+        return queryset
 
 
 class DocenteViewSet(ModelViewSet):

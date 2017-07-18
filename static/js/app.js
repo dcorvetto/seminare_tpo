@@ -74,6 +74,14 @@
                 templateUrl: '/static/html/Alta Docente.html',
                 controller: 'DocentesModificar'
             })
+            .when('/inscripcion/alta', {
+                templateUrl: '/static/html/Inscripcion.html',
+                controller: 'InscripcionAlta'
+            })
+            .when('/inscripcion/listar', {
+                templateUrl: '/static/html/Lista InscriptosEstados.html',
+                controller: 'ListadoInscripcionesController'
+            })
             .when('/login', {
                 templateUrl: '/static/html/login.html',
                 controller: 'LoginController'

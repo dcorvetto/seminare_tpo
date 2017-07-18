@@ -1,118 +1,105 @@
-<!DOCTYPE html>
-<html>
+<div class="container">
+    <div class="row">
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Inscripción</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
+        <div class="page-header">
+            <h2>Inscripción</h2>
+        </div>
 
-<body>
-    <div class="container">
-        <div class="row">
 
-            <div class="page-header">
-                <h2>Inscripción</h2>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Búsqueda</h3>
             </div>
+            <div class="panel-body">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label>DNI:</label>
+                        <input type="text" ng-model="search.numero_doc" name="" id="input" class="form-control" value="" placeholder="Ej: 38826011">
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido:</label>
+                        <input type="text" name="" ng-model="search.nombre" id="input" class="form-control" value="" placeholder="Montes">
+                    </div>
+                    <button type="submit" class="btn btn-default" ng-click="buscar()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
+                </form>
 
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Búsqueda</h3>
-                </div>
-                <div class="panel-body">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <label>DNI:</label>
-                            <input type="text" name="" id="input" class="form-control" value="" placeholder="Ej: 38826011" required="required">
-                        </div>
-                        <div class="form-group">
-                            <label>Apellido:</label>
-                            <input type="text" name="" id="input" class="form-control" value="" placeholder="Montes" required="required">
-                        </div>
-                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
-                    </form>
-
-                </div>
-                <div class="panel-footer">
-                    <div class="form-inline">
-                        <div class="form-group">
-                            <select name="" id="input" class="form-control" required="required">
+            </div>
+            <div class="panel-footer">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <select name="" id="input" class="form-control" ng-model="alumno" ng-disabled="!alumnos" ng-options="a as a.apellido+', '+a.nombre for a in alumnos">
                             <option value="">Seleccionar alumno</option>
                         </select>
-                        </div>
-                        <div class="form-group">
-                            <select name="" id="input" class="form-control" required="required">
+                    </div>
+                    <div class="form-group">
+                        <select name="" id="input" class="form-control" ng-disabled="!alumnos" ng-model="inscripcion.curso" ng-options="a.id as a.nombre for a in cursos">
                             <option value="">Seleccionar curso</option>
                         </select>
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
 
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Documentación</h3>
-                </div>
-                <div class="panel-body">
-                    <form class="form-horizontal">
-                        <div class="" style="padding-left: 15px;">
-                            <div class="form-group">
-                                <div class="checkbox">
-                                    <label>
-                                <input type="checkbox" value="">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Documentación</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <div class="" style="padding-left: 15px;">
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                <input type="checkbox"  ng-model="alumno.foto">
                                 Foto 4x4
                             </label>
-                                </div>
                             </div>
-                            <div class="form-group">
-                                <div class="checkbox">
-                                    <label>
-                                <input type="checkbox" value="">
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                <input type="checkbox" ng-model="alumno.partida_nacimiento">
                                 Partida de nacimiento
                             </label>
-                                </div>
                             </div>
-                            <div class="form-group">
-                                <div class="checkbox">
-                                    <label>
-                                <input type="checkbox" value="">
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                <input type="checkbox" ng-model="alumno.fotocopia_dni">
                                 Fotocopia DNI
                             </label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="checkbox">
-                                    <label>
-                                <input type="checkbox" value="">
-                                Certificado estudios completos
-                                 </label>
-                                </div>
-                            </div>
-                            <div class="form form-inline form-group">
-                                <label>Constancia de pase en trámite</label>
-                                <select name="" id="input" class="form-control">
-                                    <option value="">No aplica</option>
-                                    <option value="">Pendiente</option>
-                                    <option value="">Entregado</option>
-                                </select>
-
-                            </div>
-                            <div class="form-group">
-                                <div>
-                                    <button type="submit" class="btn btn-default">Aceptar</button>
-                                </div>
                             </div>
                         </div>
 
-                    </form>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                <input type="checkbox"  ng-model="alumno.certificado_estudios">
+                                Certificado estudios completos
+                                 </label>
+                            </div>
+                        </div>
+                        <div class="form form-inline form-group">
+                            <label>Constancia de pase en trámite</label>
+                            <select id="input" class="form-control" ng-model="inscripcion.estado_pase">
+                                    <option value="No aplica">No aplica</option>
+                                    <option value="Pendiente">Pendiente</option>
+                                    <option value="Entregado">Entregado</option>
+                                </select>
 
-                </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <button ng-disabled="!inscripcion.curso" ng-click="guardar()" class="btn btn-default">Aceptar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</div>
