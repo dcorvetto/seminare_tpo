@@ -1,94 +1,70 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Alta de notas</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
-
-<body>
-    <div class="container">
-        <div class="row">
-
-            <div class="page-header">
-                <h2>Alta de notas</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Búsqueda</h3>
+    </div>
+    <div class="panel-body">
+        <form class="form-inline">
+            <div class="form-group">
+                <label>DNI:</label>
+                <input ng-disabled="deshabilitado" type="text" ng-model="search.numero_doc" name="" id="input" class="form-control" value="" placeholder="Ej: 38826011">
             </div>
+            <div class="form-group">
+                <label>Apellido:</label>
+                <input type="text" name="" ng-disabled="deshabilitado" ng-model="search.nombre" id="input" class="form-control" value="" placeholder="Montes">
+            </div>
+            <button type="submit" class="btn btn-default" ng-disabled="deshabilitado" ng-click="buscar()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
+        </form>
 
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Búsqueda</h3>
-                </div>
-                <div class="panel-body">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <label>DNI:</label>
-                            <input type="text" name="" id="input" class="form-control" value="" placeholder="Ej: 38826011" required="required">
-                        </div>
-                        <div class="form-group">
-                            <label>Apellido:</label>
-                            <input type="text" name="" id="input" class="form-control" value="" placeholder="Montes" required="required">
-                        </div>
-                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
-                    </form>
-
-                </div>
-                <div class="panel-footer">
-                    <div class="form-inline">
-                        <div class="form-group">
-                            <select name="" id="input" class="form-control" required="required">
+    </div>
+    <div class="panel-footer">
+        <div class="form-inline">
+            <div class="form-group">
+                <select name="" id="input" ng-disabled="deshabilitado" class="form-control" ng-model="alumno" ng-disabled="!alumnos" ng-options="a as a.apellido+', '+a.nombre for a in alumnos">
                             <option value="">Seleccionar alumno</option>
                         </select>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Notas</h3>
-                </div>
-                <div class="panel-body">
-
-                    <form class="form">
-                        <div class="form-group">
-                            <select name="" id="input" class="form-control" required="required">
-                            <option value="">Seleccionar curso</option>
-                        </select>
-                        </div>
-
-                        <div class="form-group">
-                            
-                            <select name="" id="input" class="form-control">
-                            <option value="">Periodo/Tipo</option>
-                            <option value="">Anual</option>
-                            <option value="">1er cuatrimestre</option>
-                            <option value="">2do cuatrimestre</option>
-                        </select>
-                        </div>
-
-                        <div class="form-group">
-                            <select name="" id="input" class="form-control" required="required">
-                            <option value="">Seleccionar materia</option>
-                        </select>
-                        </div>
-                        <div class="form-group">
-                            <lable>Nota</label>
-                            <input type=text></input>
-                        </div>
-
-
-
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                    </form>
-
-
-                </div>
-            </div>
-
         </div>
     </div>
-</body>
+</div>
 
-</html>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Notas</h3>
+    </div>
+    <div class="panel-body">
+
+        <form class="form">
+            <div class="form-group">
+                <select name="" ng-disabled="deshabilitado" id="input" class="form-control" ng-model="curso" ng-disabled="!alumno" ng-options="i.curso as i.curso.nombre for i in alumno.inscripciones">
+                            <option value="">Seleccionar curso</option>
+                        </select>
+            </div>
+
+            <div class="form-group">
+
+                <select name="" ng-disabled="deshabilitado" id="input" ng-model="calificacion.tipo" class="form-control">
+                            <option value="">Periodo/Tipo</option>
+                            <option value="Anual">Anual</option>
+                            <option value="1er cuatrimestre">1er cuatrimestre</option>
+                            <option value="2do cuatrimestre">2do cuatrimestre</option>
+                        </select>
+            </div>
+
+            <div class="form-group">
+                <select name="" ng-disabled="deshabilitado" id="input" class="form-control" ng-model="materia" ng-disabled="!curso" ng-options="m as m.nombre for m in curso.plan.materias">
+                            <option value="">Seleccionar materia</option>
+                        </select>
+            </div>
+            <div class="form-group">
+                <lable>Nota</label>
+                    <input class="form-control" ng-model="calificacion.nota" type="number"></input>
+            </div>
+
+
+
+            <button type="submit" ng-click="guardar()" class="btn btn-primary">Guardar</button>
+        </form>
+
+
+    </div>
+</div>

@@ -98,7 +98,9 @@
                  );
          };
          $scope.eliminar = function(id) {
-             $http({
+
+             if (confirm("¿Está seguro que desea eliminarla?"))
+                 $http({
                      method: 'DELETE',
                      url: '/escuela/materias/' + id + '/'
                  })

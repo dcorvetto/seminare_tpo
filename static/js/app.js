@@ -82,6 +82,18 @@
                 templateUrl: '/static/html/Lista InscriptosEstados.html',
                 controller: 'ListadoInscripcionesController'
             })
+            .when('/calificacion/listar', {
+                templateUrl: '/static/html/Listado Calificaciones.html',
+                controller: 'ListadoCalificacionesController'
+            })
+            .when('/calificacion/alta', {
+                templateUrl: '/static/html/AltaNotas.html',
+                controller: 'CalificacionesAlta'
+            })
+            .when('/calificacion/modificar/:id', {
+                templateUrl: '/static/html/AltaNotas.html',
+                controller: 'CalificacionesModificar'
+            })
             .when('/login', {
                 templateUrl: '/static/html/login.html',
                 controller: 'LoginController'

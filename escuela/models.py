@@ -125,8 +125,8 @@ class Materia(models.Model):
 
 class Calificacion(models.Model):
     nota = models.FloatField(default=1)
-    fecha = models.DateField(blank=True, null=True)
-    tipo = models.CharField(blank=True, null=True, max_length=4) #TODO: agregar choices
+    fecha = models.DateTimeField(blank=True, null=True, default=dt.datetime.now)
+    tipo = models.CharField(blank=True, null=True, max_length=20) 
     alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE, related_name="calificaciones")
     materia = models.ForeignKey(Materia, on_delete=models.CASCADE, related_name="calificaciones")
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name="calificaciones")
@@ -134,3 +134,6 @@ class Calificacion(models.Model):
 
     def __str__(self):
         return self.nota.__str__()
+
+    class Meta:
+        unique_together = ("curso","materia","alumno","tipo")

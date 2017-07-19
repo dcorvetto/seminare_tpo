@@ -3,13 +3,27 @@ from .models import *
 
 
 
+class DocenteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Docente
+        fields = '__all__'
+
 class AlumnoPostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Alumno
         fields = '__all__'
 
+class MateriaSerializer2(serializers.ModelSerializer):
+    docente = DocenteSerializer(read_only=True, many=False)
+    
+    class Meta:
+        model = Materia
+        fields = '__all__'
+
 class PlanSerializer(serializers.ModelSerializer):
+    materias = MateriaSerializer2(read_only=True, many=True)
+
     class Meta:
         model = Plan
         fields = '__all__'
@@ -62,12 +76,6 @@ class InscripcionPostSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class DocenteSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Docente
-        fields = '__all__'
-
-
 class MateriaSerializer(serializers.ModelSerializer):
     plan = PlanSerializer(read_only=True, many=False)
     
@@ -83,11 +91,22 @@ class MateriaPostSerializer(serializers.ModelSerializer):
         model = Materia
         fields = '__all__'
 
-class CalificacionSerializer(serializers.ModelSerializer):
+class CalificacionSerializer(serializers.ModelSerializer):    
+    curso = CursoSerializer(read_only=True, many=False)
+    alumno = AlumnoPostSerializer(read_only=True, many=False)
+    materia = MateriaSerializer2(read_only=True, many=False)
     class Meta:
         model = Calificacion
         fields = '__all__'
 
+class CalificacionPostSerializer(serializers.ModelSerializer):
+    curso = serializers.PrimaryKeyRelatedField(queryset=Curso.objects.all())
+    alumno = serializers.PrimaryKeyRelatedField(queryset=Alumno.objects.all())
+    materia = serializers.PrimaryKeyRelatedField(queryset=Materia.objects.all())
+
+    class Meta:
+        model = Calificacion
+        fields = '__all__'
 
 class AlumnoSerializer(serializers.ModelSerializer):
     inscripciones = InscripcionSerializer(read_only=True, many=True)

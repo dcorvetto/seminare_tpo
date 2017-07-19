@@ -46,8 +46,8 @@
 
      function PlanesAlta($scope, $http) {
          $scope.guardar = function() {
-             if ($scope.plan.nombre.length > 50) {
-                 alert("El nombre del plan puede tener hasta 50 caracteres.");
+             if ($scope.plan.nombre.length > 100) {
+                 alert("El nombre del plan puede tener hasta 100 caracteres.");
                  $scope.plan.nombre = "";
                  return;
              }
@@ -86,7 +86,9 @@
                  );
          };
          $scope.eliminar = function(id) {
-             $http({
+
+             if (confirm("¿Está seguro que desea eliminarlo?"))
+                 $http({
                      method: 'DELETE',
                      url: '/escuela/planes/' + id + '/'
                  })
