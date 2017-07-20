@@ -94,23 +94,23 @@ WSGI_APPLICATION = 'seminare_tpo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     # 'default': {
-#     #     'ENGINE': 'django.db.backends.sqlite3',
-#     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     # }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'syavrjse',
-        'USER': 'syavrjse',
-        'PASSWORD': 'Bc9Coen8x1ItHtWg9piaEpWhzKy6c3wc',
-        'HOST': 'pellefant.db.elephantsql.com',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'syavrjse',
+#         'USER': 'syavrjse',
+#         'PASSWORD': 'Bc9Coen8x1ItHtWg9piaEpWhzKy6c3wc',
+#         'HOST': 'pellefant.db.elephantsql.com',
+#         'PORT': '',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
