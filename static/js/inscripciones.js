@@ -46,11 +46,11 @@
          $scope.guardar = function() {
              $http.put('/escuela/inscripciones/' + $routeParams.id + '/', $scope.inscripcion)
                  .then(function(response) {
-                         alert('inscripción modificado con éxito.');
+                         alert('inscripción modificada con éxito.');
                          window.location = "#/inscripcion/listar"
                      },
                      function(response) {
-                         alert(response.data.reduce(function(e) { return e + '\n'; }));
+                         alert("Error al guardar inscripción.");
                      }
                  );
          }
@@ -90,6 +90,12 @@
                  $scope.inscripcion.estado = "En espera";
              } else {
                  $scope.inscripcion.estado = "Confirmada";
+             }
+
+             var curso = $scope.cursos.filter(function(e) { return e.id == $scope.inscripcion.curso; })[0];
+             if (curso.inscripciones.filter(function(e) { return e.estado == "Confirmada" }).length > 4) {
+                 alert("El curso tiene 4 inscripciones confirmadas, la inscripción quedará en espera.");
+                 $scope.inscripcion.estado = "En espera";
              }
              $scope.inscripcion.alumno = $scope.alumno.id;
              $http.post('/escuela/inscripciones/?format=json', $scope.inscripcion)

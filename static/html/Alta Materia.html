@@ -20,7 +20,7 @@
                 <label>Docentes:</label>
                 <select class="form-control" ng-model="materia.docente" required>
                             <option value="">Seleccione un docente</option>
-                            <option ng-repeat="d in docentes" value="{{ d.id }}">{{ d.nombre }}</option>
+                            <option ng-repeat="d in docentes" value="{{ d.id }}">{{ d.nombre + ' ' + d.apellido }}</option>
                     </select>
             </div>
     </div>

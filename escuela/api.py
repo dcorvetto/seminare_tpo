@@ -136,6 +136,20 @@ class DocenteViewSet(ModelViewSet):
     queryset = Docente.objects.all()
     serializer_class = DocenteSerializer
 
+    def get_queryset(self):
+        queryset = Docente.objects.all()
+        nombre = self.request.query_params.get('nombre', None)
+        materia_id = self.request.query_params.get('materia_id', None)
+        numero_doc = self.request.query_params.get('numero_doc', None)
+       
+        if nombre is not None:
+            queryset = queryset.filter(Q(nombre__contains=nombre) | Q(apellido__contains=nombre))
+        if materia_id is not None:
+            queryset = queryset.filter(materias__id=materia_id)
+        if numero_doc is not None:
+            queryset = queryset.filter(numero_doc=numero_doc)
+        return queryset
+
 
 class CalificacionViewSet(MultiSerializerViewSet):
     queryset = Calificacion.objects.all()

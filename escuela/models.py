@@ -74,6 +74,8 @@ class Inscripcion(models.Model):
     estado = models.CharField(blank=True, null=True, max_length=30, default="Confirmada") 
     estado_pase = models.CharField(blank=True, null=True, max_length=30, default="No aplica")
 
+    class Meta:
+        unique_together = ("curso","alumno")
 
 class Docente(models.Model):
     nombre = models.CharField(blank=True, null=True, max_length=50)

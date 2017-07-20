@@ -20,7 +20,7 @@
         <div class="form-inline">
             <div class="form-group">
                 <select name="" id="input" ng-disabled="deshabilitado" class="form-control" ng-model="alumno" ng-disabled="!alumnos" ng-options="a as a.apellido+', '+a.nombre for a in alumnos">
-                            <option value="">Seleccionar alumno</option>
+                            <option ng-if="!deshabilitado" value="">Seleccionar alumno</option>
                         </select>
             </div>
         </div>
@@ -34,26 +34,33 @@
     <div class="panel-body">
 
         <form class="form">
-            <div class="form-group">
-                <select name="" ng-disabled="deshabilitado" id="input" class="form-control" ng-model="curso" ng-disabled="!alumno" ng-options="i.curso as i.curso.nombre for i in alumno.inscripciones">
+            <div class="form-group" ng-show="!deshabilitado">
+                <select id="input" class="form-control" ng-change="alert('')" ng-model="curso" ng-disabled="!alumno" ng-options="i.curso as i.curso.nombre for i in alumno.inscripciones">
                             <option value="">Seleccionar curso</option>
                         </select>
+            </div>
+            <div ng-if="deshabilitado">
+                <label>Curso:</label>
+                <p>{{calificacion.curso.nombre}}</p>
             </div>
 
             <div class="form-group">
 
                 <select name="" ng-disabled="deshabilitado" id="input" ng-model="calificacion.tipo" class="form-control">
-                            <option value="">Periodo/Tipo</option>
+                            <option ng-if="!deshabilitado" value="">Periodo/Tipo</option>
                             <option value="Anual">Anual</option>
                             <option value="1er cuatrimestre">1er cuatrimestre</option>
                             <option value="2do cuatrimestre">2do cuatrimestre</option>
                         </select>
             </div>
 
-            <div class="form-group">
-                <select name="" ng-disabled="deshabilitado" id="input" class="form-control" ng-model="materia" ng-disabled="!curso" ng-options="m as m.nombre for m in curso.plan.materias">
+            <div class="form-group" ng-show="!deshabilitado">
+                <select name="" id="input" class="form-control" ng-model="materia" ng-disabled="!curso" ng-options="m as m.nombre for m in curso.plan.materias">
                             <option value="">Seleccionar materia</option>
                         </select>
+            </div>
+            <div ng-if="deshabilitado"><label>Materia:</label>
+                <p>{{calificacion.materia.nombre}}</p>
             </div>
             <div class="form-group">
                 <lable>Nota</label>

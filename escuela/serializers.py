@@ -28,9 +28,16 @@ class PlanSerializer(serializers.ModelSerializer):
         model = Plan
         fields = '__all__'
 
+class InscripcionSerializer2(serializers.ModelSerializer):
+
+    class Meta:
+        model = Inscripcion
+        fields = '__all__'
+
 
 class CursoSerializer(serializers.ModelSerializer):
     plan = PlanSerializer(read_only=True, many=False)
+    inscripciones = InscripcionSerializer2(read_only=True, many=True)
 
     class Meta:
         model = Curso

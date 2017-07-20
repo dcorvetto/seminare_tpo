@@ -45,7 +45,9 @@
          $http.get('/escuela/calificaciones/' + $routeParams.id + '/')
              .then(function(response) {
                      $scope.calificacion = (response.data);
+                     $scope.alumnos = [$scope.calificacion.alumno];
 
+                     $scope.alumno = $scope.calificacion.alumno;
                  },
                  function() {
                      alert('Error buscando calificacion');
@@ -145,7 +147,7 @@
                  .then(function(response) {
                          $scope.calificaciones = (response.data);
                          if (response.data.length == 0) {
-                             alert('No se encontró ningún inscripción.')
+                             alert('No se encontró ningúna calificación.')
                          }
                      },
                      function() {

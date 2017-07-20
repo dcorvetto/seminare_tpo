@@ -8,20 +8,18 @@
      app.controller('DocentesAlta', ['$scope', '$http', docentesAlta]);
      app.controller('ListadoDocentesController', ['$scope', '$http', ListadodocentesController]);
 
-     function cargarCursos($scope, $http) {
-         $http.get('/escuela/cursos/')
+     function cargarMaterias($scope, $http) {
+         $http.get('/escuela/materias/')
              .then(function(response) {
-                     $scope.cursos = (response.data);
+                     $scope.materias = (response.data);
                  },
                  function() {
-                     alert('Error buscando cursos');
+                     alert('Error buscando materias');
                  }
              );
      }
 
      function docentesModificar($scope, $http, $routeParams) {
-
-         // cargarPlanes($scope, $http);
          $http.get('/escuela/docentes/' + $routeParams.id + '/')
              .then(function(response) {
                      $scope.docente = (response.data);
@@ -50,8 +48,6 @@
      }
 
      function docentesAlta($scope, $http) {
-         //cargarPlanes($scope, $http);
-         $scope.anio = 2017;
          $scope.docente = { estado: "activo" };
          $scope.guardar = function() {
              if (!$scope.docente.numero_doc) {
@@ -71,7 +67,7 @@
      };
 
      function ListadodocentesController($scope, $http) {
-         cargarCursos($scope, $http);
+         cargarMaterias($scope, $http);
          $scope.search = {};
          $scope.buscar = function() {
              Object.keys($scope.search).map(function(key, index) {
