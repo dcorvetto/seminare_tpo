@@ -116,7 +116,14 @@
                          $scope.buscar()
                      },
                      function() {
-                         alert('Error eliminando materia.');
+                         var errors = "";
+                         Object.keys(response.data).map(function(e) {
+                                 return e + ": " + response.data[e] + '\n';
+                             })
+                             .forEach(function(e) {
+                                 errors = errors + e;
+                             });
+                         alert(errors);
                      }
                  );
          };

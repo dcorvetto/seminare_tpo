@@ -4,7 +4,6 @@
 
      var app = angular.module('app');
 
-     app.controller('InscripcionesModificar', ['$scope', '$http', '$routeParams', InscripcionesModificar]);
      app.controller('InscripcionAlta', ['$scope', '$http', InscripcionesAlta]);
      angular.module('app').controller('ListadoInscripcionesController', ['$scope', '$http', ListadoInscripcionesController]);
 
@@ -30,32 +29,6 @@
              );
      }
 
-     function InscripcionesModificar($scope, $http, $routeParams) {
-
-         cargarPlanes($scope, $http);
-         $http.get('/escuela/inscripciones/' + $routeParams.id + '/')
-             .then(function(response) {
-                     $scope.inscripcion = (response.data);
-                     $scope.inscripcion.plan = $scope.inscripcion.plan.toString();
-                 },
-                 function() {
-                     alert('Error buscando inscripción');
-                     window.location = "#/"
-                 }
-             );
-         $scope.guardar = function() {
-             $http.put('/escuela/inscripciones/' + $routeParams.id + '/', $scope.inscripcion)
-                 .then(function(response) {
-                         alert('inscripción modificada con éxito.');
-                         window.location = "#/inscripcion/listar"
-                     },
-                     function(response) {
-                         alert("Error al guardar inscripción.");
-                     }
-                 );
-         }
-
-     }
 
      function InscripcionesAlta($scope, $http) {
          $scope.search = {};
@@ -87,14 +60,18 @@
          };
          $scope.guardar = function() {
              if ($scope.inscripcion.estado_pase == "Pendiente") {
-                 $scope.inscripcion.estado = "En espera";
+                 $scope.inscripcion.estado = "Pendiente";
              } else {
                  $scope.inscripcion.estado = "Confirmada";
              }
 
+             if ($scope.alumno.inscripciones.filter(function(e) { return e.estado !== "Cancelada" && e.curso.activo; }).length > 0) {
+                 alert("El alumno ya tiene una inscripción no cancelada en un curso activo.");
+                 return;
+             }
              var curso = $scope.cursos.filter(function(e) { return e.id == $scope.inscripcion.curso; })[0];
-             if (curso.inscripciones.filter(function(e) { return e.estado == "Confirmada" }).length > 4) {
-                 alert("El curso tiene 4 inscripciones confirmadas, la inscripción quedará en espera.");
+             if (curso.inscripciones.filter(function(e) { return e.estado == "Confirmada" || e.estado == "Pendiente" }).length > 5) {
+                 alert("El curso tiene 5 inscripciones, la inscripción quedará en espera.");
                  $scope.inscripcion.estado = "En espera";
              }
              $scope.inscripcion.alumno = $scope.alumno.id;
@@ -107,7 +84,10 @@
                          alert('inscripción cargada con éxito.');
                          window.location = "#/inscripcion/listar"
                      },
-                     function(response) {}
+                     function(response) {
+
+                         alert("Error: el alumno ya tiene una inscripción a ese curso.");
+                     }
                  );
          }
      };
@@ -139,6 +119,10 @@
                  );
          };
          $scope.guardar = function(inscripcion) {
+             if (inscripcion.curso.inscripciones.filter(function(e) { return e.estado == "Confirmada" || e.estado == "Pendiente" }).length > 5) {
+                 alert("El curso ya tiene 5 inscripciones, no puede cambiar el estado.");
+                 return;
+             }
              inscripcion.curso = inscripcion.curso.id;
              inscripcion.alumno = inscripcion.alumno.id;
              $http.put('/escuela/inscripciones/' + inscripcion.id + '/', inscripcion)

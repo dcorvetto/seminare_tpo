@@ -7,7 +7,7 @@ import datetime as dt
 class Alumno(models.Model):
     nombre = models.CharField(blank=True, null=True, max_length=50)
     apellido = models.CharField(blank=True, null=True, max_length=50)
-    numero_doc = models.CharField(max_length=15)
+    numero_doc = models.CharField(max_length=15, unique=True)
     TIPOS_DOC = (
         ('DNI', 'Documento Nacional de Identidad'),
         ('LE', 'Libreta de enrolamiento'),
@@ -51,6 +51,10 @@ class Alumno(models.Model):
         return self.nombre
 
 
+    class Meta:
+        unique_together = ("numero_doc","tipo_doc")
+
+
 class Plan(models.Model):
     nombre = models.CharField(max_length=100)
 
@@ -67,6 +71,9 @@ class Curso(models.Model):
     def __str__(self):
         return self.anio_lectivo.__str__()
 
+    class Meta:
+        unique_together = ("nombre","plan")
+
 
 class Inscripcion(models.Model):
     alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE, related_name="inscripciones")
@@ -80,7 +87,7 @@ class Inscripcion(models.Model):
 class Docente(models.Model):
     nombre = models.CharField(blank=True, null=True, max_length=50)
     apellido = models.CharField(blank=True, null=True, max_length=50)
-    numero_doc = models.CharField(max_length=15)
+    numero_doc = models.CharField(max_length=15, unique=True)
     TIPOS_DOC = (
         ('DNI', 'Documento Nacional de Identidad'),
         ('LE', 'Libreta de enrolamiento'),
@@ -130,9 +137,9 @@ class Calificacion(models.Model):
     fecha = models.DateTimeField(blank=True, null=True, default=dt.datetime.now)
     tipo = models.CharField(blank=True, null=True, max_length=20) 
     alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE, related_name="calificaciones")
-    materia = models.ForeignKey(Materia, on_delete=models.CASCADE, related_name="calificaciones")
-    curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name="calificaciones")
-    docente = models.ForeignKey(Docente, on_delete=models.CASCADE, related_name="calificaciones")
+    materia = models.ForeignKey(Materia, on_delete=models.PROTECT, related_name="calificaciones")
+    curso = models.ForeignKey(Curso, on_delete=models.PROTECT, related_name="calificaciones")
+    docente = models.ForeignKey(Docente, on_delete=models.PROTECT, related_name="calificaciones")
 
     def __str__(self):
         return self.nota.__str__()

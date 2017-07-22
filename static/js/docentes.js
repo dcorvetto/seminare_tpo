@@ -23,6 +23,13 @@
          $http.get('/escuela/docentes/' + $routeParams.id + '/')
              .then(function(response) {
                      $scope.docente = (response.data);
+                     $scope.fecha_nacimiento = $scope.docente.fecha_nacimiento != null ? new Date($scope.docente.fecha_nacimiento) : null;
+                     $scope.fecha_ingreso = $scope.docente.fecha_ingreso != null ? new Date($scope.docente.fecha_ingreso) : null;
+                     $scope.fecha_egreso = $scope.docente.fecha_egreso != null ? new Date($scope.docente.fecha_egreso) : null;
+                     $scope.fecha_licencia_desde = $scope.docente.fecha_licencia_desde != null ? new Date($scope.docente.fecha_licencia_desde) : null;
+                     $scope.fecha_licencia_hasta = $scope.docente.fecha_licencia_hasta != null ? new Date($scope.docente.fecha_licencia_hasta) : null;
+                     $scope.fecha_suspendido_desde = $scope.docente.fecha_suspendido_desde != null ? new Date($scope.docente.fecha_suspendido_desde) : null;
+                     $scope.fecha_suspendido_hasta = $scope.docente.fecha_suspendido_hasta != null ? new Date($scope.docente.fecha_suspendido_hasta) : null;
                  },
                  function() {
                      alert('Error buscando docente');

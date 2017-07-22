@@ -85,7 +85,7 @@
                         </div>
                         <div class="form-group">
                             <label>Fecha Nacimiento</label>
-                            <div uib-datepicker ng-change="docente.fecha_nacimiento = (fecha_nacimiento | date: 'YYYY-MM-DD')" ng-model="fecha_nacimiento" class="well well-sm"></div>
+                            <div uib-datepicker ng-change="docente.fecha_nacimiento = (fecha_nacimiento | date: 'yyyy-MM-dd')" ng-model="fecha_nacimiento" class="well well-sm"></div>
                         </div>
                         <label>Género</label>
                         <div class="form-group radio">
@@ -123,19 +123,19 @@
                                 </div>
                                 <div class="form-group" ng-if="docente.estado == 'activo'">
                                     <label>Fecha Activo</label>
-                                    <div uib-datepicker ng-change="docente.fecha_ingreso = (fecha_ingreso | date: 'YYYY-MM-DD')" ng-model="fecha_ingreso" class="well well-sm"></div>
+                                    <div uib-datepicker ng-change="docente.fecha_ingreso = (fecha_ingreso | date: 'yyyy-MM-dd')" ng-model="fecha_ingreso" class="well well-sm"></div>
                                 </div>
                                 <div class="form-group" ng-if="docente.estado == 'baja'">
                                     <label>Fecha Egreso</label>
-                                    <div uib-datepicker ng-change="docente.fecha_egreso = (fecha_egreso | date: 'YYYY-MM-DD')" ng-model="fecha_egreso" class="well well-sm"></div>
+                                    <div uib-datepicker ng-change="docente.fecha_egreso = (fecha_egreso | date: 'yyyy-MM-dd')" ng-model="fecha_egreso" class="well well-sm"></div>
                                 </div>
                                 <div class="form-group" ng-if="docente.estado == 'licencia'">
                                     <label>Fecha Licencia Desde</label>
-                                    <div uib-datepicker ng-change="docente.fecha_licencia_desde = (fecha_licencia_desde | date: 'YYYY-MM-DD')" ng-model="fecha_licencia_desde" class="well well-sm"></div>
+                                    <div uib-datepicker ng-change="docente.fecha_licencia_desde = (fecha_licencia_desde | date: 'yyyy-MM-dd')" ng-model="fecha_licencia_desde" class="well well-sm"></div>
                                 </div>
                                 <div class="form-group" ng-if="docente.estado == 'licencia'">
                                     <label>Fecha Licencia Hasta</label>
-                                    <div uib-datepicker ng-change="docente.fecha_licencia_hasta = (fecha_licencia_hasta | date: 'YYYY-MM-DD')" ng-model="fecha_licencia_hasta" class="well well-sm"></div>
+                                    <div uib-datepicker ng-change="docente.fecha_licencia_hasta = (fecha_licencia_hasta | date: 'yyyy-MM-dd')" ng-model="fecha_licencia_hasta" class="well well-sm"></div>
                                 </div>
                                 <div class="form-group" ng-if="docente.estado == 'licencia'">
                                     <label>Tipo Licencia</label>
@@ -150,7 +150,7 @@
                                 </div>
                                 <div class="form-group" ng-if="docente.estado == 'suspendido'">
                                     <label>Fecha suspendido hasta</label>
-                                    <div uib-datepicker ng-change="docente.fecha_suspendido_hasta = (fecha_suspendido_hasta | date: 'YYYY-MM-DD')" ng-model="fecha_suspendido_hasta" class="well well-sm"></div>
+                                    <div uib-datepicker ng-change="docente.fecha_suspendido_hasta = (fecha_suspendido_hasta | date: 'yyyy-MM-dd')" ng-model="fecha_suspendido_hasta" class="well well-sm"></div>
                                 </div>
 
                             </div>

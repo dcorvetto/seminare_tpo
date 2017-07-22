@@ -13,6 +13,7 @@ class MultiSerializerViewSet(ModelViewSet):
             return self.serializers.get(self.action,
                         self.serializers['default'])
 
+
 class AlumnoViewSet(MultiSerializerViewSet):
     queryset = Alumno.objects.all()
     serializers = {
@@ -32,8 +33,8 @@ class AlumnoViewSet(MultiSerializerViewSet):
         numero_folio = self.request.query_params.get('numero_folio', None)
         libro_matriz = self.request.query_params.get('libro_matriz', None)
         genero = self.request.query_params.get('genero', None)
-        curso_estado = self.request.query_params.get('curso_estado', None)
-        
+        estado = self.request.query_params.get('curso_estado', None)     
+
         if nombre is not None:
             queryset = queryset.filter(Q(nombre__contains=nombre) | Q(apellido__contains=nombre))
         if curso is not None:
@@ -46,8 +47,18 @@ class AlumnoViewSet(MultiSerializerViewSet):
             queryset = queryset.filter(libro_matriz=libro_matriz)
         if genero is not None:
             queryset = queryset.filter(genero=genero)
-        if curso_estado is not None:
-            queryset = queryset.filter(inscripciones__estado=curso_estado)
+        if estado is not None:
+            if estado is "ac":
+                queryset = queryset.filter(activo=True)
+            if estado is "ab":
+                queryset = queryset.filter(abandono=True)
+            if estado is "eg":
+                queryset = queryset.filter(egreso=True)
+            if estado is "dp":
+                queryset = queryset.filter(cooperadora_paga=False)
+            if estado is "dc":
+                queryset = queryset.filter(Q(partida_nacimiento=False) | Q(foto=False) | Q(fotocopia_dni=False) | Q(certificado_estudios=False))
+                
         return queryset.order_by("apellido")
 
 

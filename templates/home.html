@@ -24,33 +24,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script>
-        $(document).ready(function() {
-            $('.navbar a.dropdown-toggle').on('click', function(e) {
-                var $el = $(this);
-                var $parent = $(this).offsetParent(".dropdown-menu");
-                $(this).parent("li").toggleClass('open');
-
-                if (!$parent.parent().hasClass('nav')) {
-                    $el.next().css({
-                        "top": $el[0].offsetTop,
-                        "left": $parent.outerWidth() - 4
-                    });
-                }
-
-                $('.nav li.open').not($(this).parents("li")).removeClass("open");
-
-                return false;
-            });
-        });
     </script>
 </head>
 
 <body ng-app="app">
 
     <div class=" row ">
-        <!--<div class="container">
-                  <h2>Sistema de Administración C.E.N.S. Nro 4 </h2>           
-        </div>-->
+
         <nav class="navbar navbar-default " role="navigation ">
             <div class="navbar-header ">
 
@@ -60,13 +40,13 @@
             <span class="icon-bar "></span>
             <span class="icon-bar "></span>
           </button>
-                <a class="navbar-brand " href="#">
-                    <a class="navbar-brand " href="# "><img src="{% static 'images/logo_cens4.jpg' %}" width="auto;" height="35px;" style="mix-blend-mode: multiply;"></img>
-                    </a>
+                <a class="navbar-brand " href="# "><img src="{% static 'images/logo_cens4.jpg' %}" width="auto;" height="35px;" style="mix-blend-mode: multiply;"></img>
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse " ng-class="!navCollapsed && 'in' ">
+
 
                 <ul class="nav navbar-nav ">
                     <li><a href="#/ " ng-click='navCollapsed = true'>Home</a></li>
@@ -154,24 +134,21 @@
             <!-- /.navbar-collapse -->
         </nav>
 
-    </div>
 
+        <div class="container ">
+            <ng-view></ng-view>
 
-
-    <div class="container ">
-        <ng-view></ng-view>
-
-    </div>
-    <style>
-        .anchor {
-            background: none!important;
-            color: #337ab7;
-            border: none;
-            padding: 0!important;
-            font: inherit;
-            cursor: pointer;
-        }
-    </style>
+        </div>
+        <style>
+            .anchor {
+                background: none!important;
+                color: #337ab7;
+                border: none;
+                padding: 0!important;
+                font: inherit;
+                cursor: pointer;
+            }
+        </style>
 
 </body>
 

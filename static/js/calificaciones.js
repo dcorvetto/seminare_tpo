@@ -46,7 +46,8 @@
              .then(function(response) {
                      $scope.calificacion = (response.data);
                      $scope.alumnos = [$scope.calificacion.alumno];
-
+                     $scope.curso = $scope.calificacion.curso;
+                     $scope.materia = $scope.calificacion.materia;
                      $scope.alumno = $scope.calificacion.alumno;
                  },
                  function() {

@@ -32,6 +32,7 @@
          $http.get('/escuela/alumnos/' + $routeParams.id + '/')
              .then(function(response) {
                      $scope.alumno = (response.data);
+                     $scope.fecha_nacimiento = new Date($scope.alumno.fecha_nacimiento);
                  },
                  function() {
                      alert('Error buscando alumno');
