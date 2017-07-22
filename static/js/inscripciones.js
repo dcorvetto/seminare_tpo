@@ -70,7 +70,7 @@
                  return;
              }
              var curso = $scope.cursos.filter(function(e) { return e.id == $scope.inscripcion.curso; })[0];
-             if (curso.inscripciones.filter(function(e) { return e.estado == "Confirmada" || e.estado == "Pendiente" }).length > 5) {
+             if (curso.inscripciones.filter(function(e) { return e.estado == "Confirmada" || e.estado == "Pendiente" }).length >= 5) {
                  alert("El curso tiene 5 inscripciones, la inscripción quedará en espera.");
                  $scope.inscripcion.estado = "En espera";
              }
@@ -119,7 +119,7 @@
                  );
          };
          $scope.guardar = function(inscripcion) {
-             if (inscripcion.curso.inscripciones.filter(function(e) { return e.estado == "Confirmada" || e.estado == "Pendiente" }).length > 5) {
+             if (inscripcion.curso.inscripciones.filter(function(e) { return e.estado == "Confirmada" || e.estado == "Pendiente" }).length >= 5 && inscripcion.estado != "Cancelada") {
                  alert("El curso ya tiene 5 inscripciones, no puede cambiar el estado.");
                  return;
              }
