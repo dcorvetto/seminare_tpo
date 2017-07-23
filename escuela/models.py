@@ -123,7 +123,7 @@ class Docente(models.Model):
         return self.nombre
 
 class Materia(models.Model):
-    nombre = models.CharField(blank=True, null=True, max_length=50)
+    nombre = models.CharField(max_length=50)
     plan = models.ForeignKey(Plan, on_delete=models.CASCADE, related_name="materias")
     horas = models.IntegerField(blank=True, null=True, max_length=8)
     activa = models.BooleanField(default=True)

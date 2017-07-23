@@ -95,3 +95,5 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+.vscode/tags
+db-bu.sqlite3
