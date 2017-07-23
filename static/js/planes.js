@@ -54,6 +54,9 @@
      }
 
      function PlanesAlta($scope, $http) {
+         $scope.plan = {
+             nombre: ""
+         };
          $scope.guardar = function() {
              if ($scope.plan.nombre.length > 100) {
                  alert("El nombre del plan puede tener hasta 100 caracteres.");
@@ -70,7 +73,14 @@
                          window.location = "#/plan/listar"
                      },
                      function(response) {
-                         alert(response.status);
+                         var errors = "";
+                         Object.keys(response.data).map(function(e) {
+                                 return e + ": " + response.data[e] + '\n';
+                             })
+                             .forEach(function(e) {
+                                 errors = errors + e;
+                             });
+                         alert(errors);
                      }
                  );
          }

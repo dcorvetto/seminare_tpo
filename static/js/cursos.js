@@ -39,7 +39,14 @@
                          window.location = "#/curso/listar"
                      },
                      function(response) {
-                         alert(response.data.reduce(function(e) { return e + '\n'; }));
+                         var errors = "";
+                         Object.keys(response.data).map(function(e) {
+                                 return e + ": " + response.data[e] + '\n';
+                             })
+                             .forEach(function(e) {
+                                 errors = errors + e;
+                             });
+                         alert(errors);
                      }
                  );
          }
