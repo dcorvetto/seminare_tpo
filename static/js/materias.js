@@ -112,18 +112,11 @@
                      url: '/escuela/materias/' + id + '/'
                  })
                  .then(function(response) {
-                         alert("Materia eliminado exitosamente.")
+                         alert("Materia eliminada exitosamente.")
                          $scope.buscar()
                      },
                      function() {
-                         var errors = "";
-                         Object.keys(response.data).map(function(e) {
-                                 return e + ": " + response.data[e] + '\n';
-                             })
-                             .forEach(function(e) {
-                                 errors = errors + e;
-                             });
-                         alert(errors);
+                        alert('Error eliminando materia: la materia tiene calificaciones asociadas');
                      }
                  );
          };
