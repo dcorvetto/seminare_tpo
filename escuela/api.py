@@ -47,18 +47,17 @@ class AlumnoViewSet(MultiSerializerViewSet):
             queryset = queryset.filter(libro_matriz=libro_matriz)
         if genero is not None:
             queryset = queryset.filter(genero=genero)
-        if estado is not None:
-            if estado is "ac":
-                queryset = queryset.filter(activo=True)
-            if estado is "ab":
-                queryset = queryset.filter(abandono=True)
-            if estado is "eg":
-                queryset = queryset.filter(egreso=True)
-            if estado is "dp":
-                queryset = queryset.filter(cooperadora_paga=False)
-            if estado is "dc":
-                queryset = queryset.filter(Q(partida_nacimiento=False) | Q(foto=False) | Q(fotocopia_dni=False) | Q(certificado_estudios=False))
-                
+        if estado=="ac":
+            queryset = queryset.filter(activo=1)
+        if estado=="ab":
+            queryset = queryset.filter(abandono=1)
+        if estado=="eg": 
+            queryset = queryset.filter(egreso=1)
+        if estado=="dp":
+            queryset = queryset.filter(cooperadora_paga=0)
+        if estado=="dc":
+            queryset = queryset.filter(Q(partida_nacimiento=0) | Q(foto=0) | Q(fotocopia_dni=0) | Q(certificado_estudios=0))
+
         return queryset.order_by("apellido")
 
 
