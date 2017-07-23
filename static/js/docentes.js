@@ -41,6 +41,38 @@
                  alert("El número de documento es un campo requerido.")
                  return;
              }
+             if (!$scope.docente.titulo) {
+                 alert("El titulo es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.fecha_ingreso) {
+                 alert("La fecha de ingreso es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.telefono) {
+                 alert("El teléfono es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.fecha_egreso & $scope.docente.estado=="baja") {
+                 alert("La fecha egreso es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.fecha_licencia_desde & $scope.docente.estado=="licencia") {
+                 alert("La fecha de licencia es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.fecha_licencia_hasta & $scope.docente.estado=="licencia") {
+                 alert("La fecha de licencia es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.fecha_suspendido_desde & $scope.docente.estado=="suspendido") {
+                 alert("La fecha suspendido es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.fecha_suspendido_hasta & $scope.docente.estado=="suspendido") {
+                 alert("La fecha suspendido es un campo requerido.")
+                 return;
+             }
              $http.put('/escuela/docentes/' + $routeParams.id + '/', $scope.docente)
                  .then(function(response) {
                          alert('docente modificado con éxito.');
@@ -59,6 +91,38 @@
          $scope.guardar = function() {
              if (!$scope.docente.numero_doc) {
                  alert("El número de documento es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.titulo) {
+                 alert("El titulo es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.fecha_ingreso) {
+                 alert("La fecha de ingreso es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.telefono) {
+                 alert("El teléfono es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.fecha_egreso & $scope.docente.estado=="baja") {
+                 alert("La fecha egreso es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.fecha_licencia_desde & $scope.docente.estado=="licencia") {
+                 alert("La fecha de licencia es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.fecha_licencia_hasta & $scope.docente.estado=="licencia") {
+                 alert("La fecha de licencia es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.fecha_suspendido_desde & $scope.docente.estado=="suspendido") {
+                 alert("La fecha suspendido es un campo requerido.")
+                 return;
+             }
+             if (!$scope.docente.fecha_suspendido_hasta & $scope.docente.estado=="suspendido") {
+                 alert("La fecha suspendido es un campo requerido.")
                  return;
              }
              $http.post('/escuela/docentes/', $scope.docente)

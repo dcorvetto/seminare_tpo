@@ -31,6 +31,15 @@
                  }
              );
          $scope.guardar = function() {
+             if ($scope.plan.nombre.length > 100) {
+                 alert("El nombre del plan puede tener hasta 100 caracteres.");
+                 $scope.plan.nombre = "";
+                 return;
+             }
+             if (!$scope.plan.nombre) {
+                 alert("El nombre del plan es un campo requerido");
+                 return;
+             }
              $http.put('/escuela/planes/' + $routeParams.id + '/', $scope.plan)
                  .then(function(response) {
                          alert('plan modificado con éxito.');

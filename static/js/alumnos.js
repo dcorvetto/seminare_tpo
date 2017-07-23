@@ -44,6 +44,30 @@
                  alert("El número de documento es un campo requerido.")
                  return;
              }
+             if (!$scope.alumno.tipo_doc) {
+                 alert("El tipo de documento es un campo requerido.")
+                 return;
+             }
+             if (!$scope.alumno.nombre) {
+                 alert("El nombre es un campo requerido.")
+                 return;
+             }
+             if (!$scope.alumno.apellido) {
+                 alert("El apellido es un campo requerido.")
+                 return;
+             }
+             if (!$scope.alumno.nacionalidad) {
+                 alert("La nacionalidad es un campo requerido.")
+                 return;
+             }
+             if (!$scope.alumno.pais) {
+                 alert("El país es un campo requerido.")
+                 return;
+             }
+             if (!$scope.alumno.fecha_nacimiento) {
+                 alert("La fecha de nacimiento es un campo requerido.")
+                 return;
+             }
              $http.put('/escuela/alumnos/' + $routeParams.id + '/', $scope.alumno)
                  .then(function(response) {
                          alert('alumno modificado con éxito.');

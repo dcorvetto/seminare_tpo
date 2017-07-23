@@ -88,6 +88,7 @@ class Docente(models.Model):
     nombre = models.CharField(blank=True, null=True, max_length=50)
     apellido = models.CharField(blank=True, null=True, max_length=50)
     numero_doc = models.CharField(max_length=15, unique=True)
+    titulo = models.CharField(blank=True, null=True, max_length=100)
     TIPOS_DOC = (
         ('DNI', 'Documento Nacional de Identidad'),
         ('LE', 'Libreta de enrolamiento'),
