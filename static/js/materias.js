@@ -53,7 +53,14 @@
                          window.location = "#/materia/listar"
                      },
                      function(response) {
-                         alert(response.status);
+                         var errors = "";
+                         Object.keys(response.data).map(function(e) {
+                                 return e + ": " + response.data[e] + '\n';
+                             })
+                             .forEach(function(e) {
+                                 errors = errors + e;
+                             });
+                         alert(errors);
                      }
                  );
          }
