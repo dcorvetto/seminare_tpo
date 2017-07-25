@@ -121,6 +121,7 @@
          $scope.guardar = function(inscripcion) {
              if (inscripcion.curso.inscripciones.filter(function(e) { return e.estado == "Confirmada" || e.estado == "Pendiente" }).length >= 5 && inscripcion.estado != "Cancelada") {
                  alert("El curso ya tiene 5 inscripciones, no puede cambiar el estado.");
+                 $scope.buscar();
                  return;
              }
              inscripcion.curso = inscripcion.curso.id;
